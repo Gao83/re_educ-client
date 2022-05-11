@@ -1,0 +1,24 @@
+footer {
+    background-color: #212429;
+    width: 100%;
+    color: white;
+    font-size: .7em;
+    position: absolute;
+    justify-content:center;
+    display:flex;
+    float: left;
+    bottom: 0;
+    height: 200px;
+    padding: 3px;
+    font-size: 1.3em;
+    text-align: center;
+    padding-top: 30px;
+
+}
+
+.logo-footer{
+    width: 300px;
+    line-height: 300px;
+    display: block;
+    padding-top: 20px;
+}
