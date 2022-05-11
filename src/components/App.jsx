@@ -8,10 +8,11 @@ const App = () => {
 
     return (
         <>
-            <Navigation />
+            {/* <Navigation />
             <CategoryNavbar/>
+            // <AppRoutes />
+            <Footer/> */}
             <AppRoutes />
-            <Footer/>
         </>
     )
 }
