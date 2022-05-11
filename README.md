@@ -1,24 +1,24 @@
 
 
 
-# CLIENT
- |        URL       |                 DESCRIPTION                     |
-|------------------|-------------------------------------------------|
-   |          /      | Pagina de inicio |
-      |    /perfil     |  Perfil estudiante|
-       | /perfil/editar/:id      |  Editar perfil estudiante (POP UP)|
-        | /portal-profesor      |  Perfil profesor|
-        | /portal-profesor/editar/:id      |  Editar perfil profesor |
-        |    /cursos       |  Lista de cursos|
-      | /cursos/:categoria  |  Lista de cursos |
-       |    /cursos/:title   |  Detalle de curso |       
-        |   /sobre-nosotros      |  Sobre nosotros/as |
-        |   /contacto      |  Contacto |
-        |      /iniciar-sesion      |  Login |
-        |   /registro       |  Registro (POP UP) |
-        |     /carrito         |  Lista de cursos que hay en el  carrito |
-        | /carrito/checkout    |  Pagar los cursos elegidos |
-        | /acceder/:id      |  Acceso/visualización del curso |
+# CLIENTs
+ |        URL                 |                 DESCRIPTION                     |
+|-----------------------------|-------------------------------------------------|
+|          /                  | Pagina de inicio                                |
+|    /perfil                  |  Perfil estudiante                              |
+| /perfil/editar/:id          |  Editar perfil estudiante (POP UP)              |
+| /portal-profesor            |  Perfil profesor                                |
+| /portal-profesor/editar/:id |  Editar perfil profesor                         |
+|    /cursos                  |  Lista de cursos                                |
+| /cursos/:categoria          |  Lista de cursos                                |
+|    /cursos/:title           |  Detalle de curso                               |       
+|   /sobre-nosotros           |  Sobre nosotros/as                              |
+|   /contacto                 |  Contacto                                       |
+|      /iniciar-sesion        |  Login                                          |
+|   /registro                 |  Registro (POP UP)                              |
+|     /carrito                |  Lista de cursos que hay en el  carrito         |
+| /carrito/checkout           |  Pagar los cursos elegidos                      |
+| /acceder/:id                |  Acceso/visualización del curso                 |
 
 ## By ROL TEACHER
 
