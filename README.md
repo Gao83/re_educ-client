@@ -34,9 +34,9 @@
 ````
 
 ├── components
-│   │── Navbar
-│   │   │── Navbar.jsx
-│   │   └── Navbar.css
+│   │── Navigation
+│   │   │── Navigation.jsx
+│   │   └── Navigation.css
 │   │── CategoryNavbar                              //Para categorías de los cursos
 │   │   │── CategoryNavbar.jsx
 │   │   └── CategoryNavbar.css
