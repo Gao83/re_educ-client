@@ -4,8 +4,8 @@
 # CLIENT
  |        URL       |                 DESCRIPTION                     |
 |------------------|-------------------------------------------------|
-   |          /      | Pagina de inicio |
-      |    /perfil     |  Perfil estudiante|
+ |         /      | Pagina de inicio |
+ |    /perfil     |  Perfil estudiante|
        | /perfil/editar/:id      |  Editar perfil estudiante (POP UP)|
         | /portal-profesor      |  Perfil profesor|
         | /portal-profesor/editar/:id      |  Editar perfil profesor |
