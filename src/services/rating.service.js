@@ -21,9 +21,25 @@ class RatingService {
         return this.api.post(`/course/${course}/create-comment`)
     }
 
+    updateOneUserComment = (id, userData) => {
+        return this.api.post(`/course/edit-comment/${id}`, userData)
+    }
+
+    deleteOneUserComment = (id) => {
+        return this.api.post(`/course/delete/${id}`)
+    }
 
     createTeacherComment = (teacher) => {
         return this.api.post(`/teacher/${teacher}/create-comment`)
+    }
+
+
+    updateOneTeacherComment = (id, userData) => {
+        return this.api.post(`/teacher/edit-comment/${id}`, userData)
+    }
+
+    deleteOneTeacherComment = (id) => {
+        return this.api.post(`/teacher/delete/${id}`)
     }
 }
 
