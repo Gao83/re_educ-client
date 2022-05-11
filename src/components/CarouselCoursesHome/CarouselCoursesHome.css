@@ -1,0 +1,13 @@
+.carousel-container-home {
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.carousel-container-home h1 {
+    text-align: center;
+    padding-top: 120px;
+}
