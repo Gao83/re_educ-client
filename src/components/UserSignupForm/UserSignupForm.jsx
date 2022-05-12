@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
+import './UserSignupForm.css'
 import authService from './../../services/auth.service'
 import { useNavigate } from 'react-router-dom'
 
 
-//REGISTER IN DB. OK NEED TO IMPLEMENT NAVIGATE CLOSEMODAL LATER
+//REGISTER IN DB. OK NEED TO IMPLEMENT CLOSEMODAL LATER
 
 const UserSignupForm = () => {
 
@@ -15,6 +16,8 @@ const UserSignupForm = () => {
     })
 
     const { username, email, password } = signupForm
+
+    const navigate = useNavigate()
 
     const handleInputChange = e => {
         const { name, value } = e.target
@@ -32,13 +35,14 @@ const UserSignupForm = () => {
             .then(({ data }) => {
                 setSignupForm(data)
                 // closeModal()
-                // navigate('/iniciar-sesion')
+                navigate('/iniciar-sesion')
             })
             .catch(err => console.log(err))
     }
 
     return (
 
+        <Container className="signup-form">
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
                 <Form.Label>Nombre Usuario</Form.Label>
@@ -55,7 +59,8 @@ const UserSignupForm = () => {
             <div>
                 <Button className='btn btn-warning' type="submit" style={{ width: '100%' }}>Registrar</Button>
             </div>
-        </Form>
+            </Form>
+        </Container>
     )
 }
 

@@ -1,9 +1,10 @@
 body {
-    font-family: sans-serif;
-    font-weight: 300;
+    /* font-family: 'DM Serif Display',serif; */
+    font-family: 'Montserrat',sans-serif;
 }
 
-.logo-navbar{
+.logo-navbar {
     width: 200px;
+
 }
 
