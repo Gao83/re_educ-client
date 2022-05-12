@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
-import { useEffect } from 'react';
 import authService from '../services/auth.service';
+import { useEffect } from 'react';
+
 
 const AuthContext = createContext()
 
@@ -44,10 +45,12 @@ function AuthProviderWrapper(props) {
 
     const logOutUser = () => {
         removeToken()
-        setIsLoggedIn(false);
-        setIsLoading(false);
-        setUser(null);
+        setIsLoggedIn(false)
+        setIsLoading(false)
+        setUser(null)
     }
+
+    useEffect(() => authenticateUser(), [])
 
 
     return (

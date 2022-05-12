@@ -4,7 +4,7 @@ import authService from './../../services/auth.service'
 import { useNavigate } from 'react-router-dom'
 
 
-//REGISTER IN DB. OK NEED TO IMPLEMENT NAVIGATE CLOSEMODAL LATER
+//REGISTER IN DB. OK NEED TO IMPLEMENT CLOSEMODAL LATER
 
 const UserSignupForm = () => {
 
@@ -15,6 +15,8 @@ const UserSignupForm = () => {
     })
 
     const { username, email, password } = signupForm
+
+    const navigate = useNavigate()
 
     const handleInputChange = e => {
         const { name, value } = e.target
@@ -32,7 +34,7 @@ const UserSignupForm = () => {
             .then(({ data }) => {
                 setSignupForm(data)
                 // closeModal()
-                // navigate('/iniciar-sesion')
+                navigate('/iniciar-sesion')
             })
             .catch(err => console.log(err))
     }
