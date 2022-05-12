@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import {  Button } from 'react-bootstrap'
 import { useState } from 'react'
 import coursesService from '../../services/courses.service'
 import './SearchBar.css'
@@ -54,15 +54,6 @@ const SearchBar = () => {
             </div>
         </div >
 
-        // <Form className="d-flex">
-        //     <FormControl
-        //         type="search"
-        //         placeholder="Search"
-        //         className="me-2"
-        //         aria-label="Search"
-        //     />
-        //     <Button variant="outline-success">Search</Button>
-        // </Form>
     )
 }
 

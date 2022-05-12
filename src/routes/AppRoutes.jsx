@@ -6,6 +6,7 @@ import UserSignupDetailsPage from "../pages/UsersignupDetailsPage/UserSignupDeta
 import UserLoginPage from "../pages/UserLoginPage/UserLoginPage"
 import StudentProfile from "../pages/StudentProfile/StudentProfile"
 import CoursePage from "../pages/CoursesPage/CoursePage"
+import Ratings from "../pages/RatingsPage/ratings.page"
 
 
 const AppRoutes = () => {
@@ -19,6 +20,8 @@ const AppRoutes = () => {
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
             <Route path='/perfil' element={<StudentProfile/>}/>  
             <Route path='/cursos' element={<CoursePage />} />
+            <Route path='/ratings' element={<Ratings />} />
+
 
 
         </Routes>
