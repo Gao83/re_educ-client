@@ -23,6 +23,7 @@ const CourseDetailsPage = () => {
             ?
             <>
                 <h1>{courseDetail.title} </h1>
+                <h1>{courseDetail.description} </h1>
             </> :
             <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
