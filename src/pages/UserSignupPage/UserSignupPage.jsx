@@ -1,5 +1,5 @@
 import { Container, Col } from "react-bootstrap"
-import UserSignupForm from "../components/UserSignupForm/UserSignupForm"
+import UserSignupForm from "../../components/UserSignupForm/UserSignupForm"
 
 
 const UserSignupPage = () => {
@@ -11,7 +11,6 @@ const UserSignupPage = () => {
                 <hr />
                 <UserSignupForm />
             </Col>
-
         </Container>
     )
 }

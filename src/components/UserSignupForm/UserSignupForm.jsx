@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
+import './UserSignupForm.css'
 import authService from './../../services/auth.service'
 import { useNavigate } from 'react-router-dom'
+
 
 
 //REGISTER IN DB. OK NEED TO IMPLEMENT NAVIGATE CLOSEMODAL LATER
@@ -39,6 +41,7 @@ const UserSignupForm = () => {
 
     return (
 
+        <Container className="signup-form">
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="username">
                 <Form.Label>Nombre Usuario</Form.Label>
@@ -55,7 +58,8 @@ const UserSignupForm = () => {
             <div>
                 <Button className='btn btn-warning' type="submit" style={{ width: '100%' }}>Registrar</Button>
             </div>
-        </Form>
+            </Form>
+        </Container>
     )
 }
 
