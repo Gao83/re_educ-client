@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap"
 
 import courseService from "../../services/courses.service"
 import { useEffect, useState } from "react"
-import CourseList from "../../components/CourseList/CourseList"
+import CourseList from "../../components/CoursesList/CoursesList"
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])
@@ -16,7 +16,6 @@ const CoursePage = () => {
             })
             .then(err => console.log(err))
     }
-
     return (
         <>
             <Container>
@@ -24,10 +23,7 @@ const CoursePage = () => {
                 <hr />
                 <CourseList courses={courses} />
             </Container>
-
-
         </>
-
     )
 }
 export default CoursePage
