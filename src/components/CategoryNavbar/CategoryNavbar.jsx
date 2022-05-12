@@ -1,6 +1,7 @@
 // import './Navigation.css'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import SearchBar from '../SearchBar/SearchBar'
 
 const CategoryNavbar = () => {
 
@@ -17,6 +18,7 @@ const CategoryNavbar = () => {
                             <Nav.Link href="#">Informática y software</Nav.Link>
                             <Nav.Link href="#">Música</Nav.Link>
                             <Nav.Link href="#">Salud y fitness</Nav.Link>
+                            <SearchBar />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
