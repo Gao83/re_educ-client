@@ -11,6 +11,7 @@ const UserSignupPage = () => {
                 <hr />
                 <UserSignupForm />
             </Col>
+
         </Container>
     )
 }

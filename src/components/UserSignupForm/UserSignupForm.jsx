@@ -35,7 +35,7 @@ const UserSignupForm = () => {
             .then(({ data }) => {
                 setSignupForm(data)
                 // closeModal()
-                navigate('/iniciar-sesion')
+                navigate('/registro-detalles')
             })
             .catch(err => console.log(err))
     }
