@@ -4,8 +4,6 @@ import courseServices from "../../services/courses.service"
 
 const CoursesForm = () => {
     const [isPaid, setIsPaid] = useState(false)
-
-
     const [courseData, setCourseData] = useState({
         title: '',
         courseImg: '',
@@ -24,6 +22,9 @@ const CoursesForm = () => {
             ...courseData,
             [name]: value
         })
+
+
+
     }
     const handleIsPaidInput = (e) => {
         setIsPaid(e.target.checked)
@@ -33,7 +34,7 @@ const CoursesForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         courseServices
-            .createOneCourse(courseData)
+            .createOneCourse({...courseData, isPaid})
             .then(response => {
                 console.log(response)
 
