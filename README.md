@@ -11,6 +11,7 @@
 | /portal-profesor/editar/:id |  Editar perfil profesor                         |
 |    /cursos                  |  Lista de cursos                                |
 | /cursos/:categoria          |  Lista de cursos                                |
+| /cursos/:search             |  Lista de cursos por botón de búsqueda          |
 |    /cursos/:title           |  Detalle de curso                               |       
 |   /sobre-nosotros           |  Sobre nosotros/as                              |
 |   /contacto                 |  Contacto                                       |

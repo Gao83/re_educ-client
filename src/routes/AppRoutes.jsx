@@ -5,6 +5,7 @@ import UserSignupPage from "../pages/UserSignupPage/UserSignupPage"
 import UserSignupDetailsPage from "../pages/UsersignupDetailsPage/UserSignupDetailsPage"
 import UserLoginPage from "../pages/UserLoginPage/UserLoginPage"
 import StudentProfile from "../pages/StudentProfile/StudentProfile"
+import CoursePage from "../pages/CoursesPage/CoursePage"
 
 
 const AppRoutes = () => {
@@ -17,6 +18,9 @@ const AppRoutes = () => {
             <Route path='/registro-detalles' element={<UserSignupDetailsPage />} />
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
             <Route path='/perfil' element={<StudentProfile/>}/>  
+            <Route path='/cursos' element={<CoursePage />} />
+
+
         </Routes>
     )
 }
