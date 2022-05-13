@@ -22,6 +22,7 @@ const CategoryNavbar = () => {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
+                <SearchBar/>
             </Navbar>
         </>
     )
