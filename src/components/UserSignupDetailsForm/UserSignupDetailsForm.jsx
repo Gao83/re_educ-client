@@ -14,25 +14,24 @@ const UserSignupDetailsForm = ({ id }) => {
         profileImg: ''
     })
 
-    const navigate = useNavigate()
     const [loadingImage, setLoadingImage] = useState(false)
-
+    
     const handleImageUpload = (e) => {
-
+        
         setLoadingImage(true)
-
+        
         const formData = new FormData()
         formData.append('imageData', e.target.files[0])
-
+        
         uploadService
-            .uploadImage(formData)
-            .then(({ data }) => {
-                setLoadingImage(false)
-                setSignupDetailsForm({ ...signupDetailsForm, profileImg: data.cloudinary_url })
-            })
-            .catch(err => console.log(err))
+        .uploadImage(formData)
+        .then(({ data }) => {
+            setLoadingImage(false)
+            setSignupDetailsForm({ ...signupDetailsForm, profileImg: data.cloudinary_url })
+        })
+        .catch(err => console.log(err))
     }
-
+    
     const handleInputChange = e => {
         const { name, value } = e.target
         setSignupDetailsForm({
@@ -40,13 +39,16 @@ const UserSignupDetailsForm = ({ id }) => {
             [name]: value
         })
     }
-
+    
+    const navigate = useNavigate()
+    
     function handleSubmit(e) {
         e.preventDefault()
 
         usersService
-            .updateOneUser(id)
+            .updateOneUser(id, signupDetailsForm)
             .then(({ data }) => {
+                console.log(data)
                 setSignupDetailsForm(data)
                 navigate('/')
             })

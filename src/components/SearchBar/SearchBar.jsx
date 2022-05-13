@@ -42,7 +42,7 @@ const SearchBar = () => {
                         <div className='desplegable'>
                             {
                                 searchByInput.map(course => {
-                                    return (
+                                    return (        // search result
                                         <Link key={course?._id} to={`/cursos/${course._id}`} onClick={resetFilter}>
                                             <p key={course._id}><img src={course.courseImg} alt="" />{course.title}</p>
                                         </Link>

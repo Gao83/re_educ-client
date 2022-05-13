@@ -20,7 +20,7 @@ const AppRoutes = () => {
             <Route path='/registro' element={<UserSignupPage />} />
             <Route path='/registro-detalles' element={<UserSignupDetailsPage />} />
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
-            <Route path='/perfil' element={<StudentProfile />} />  
+            <Route path='/perfil' element={<StudentProfile />} />
             <Route path='/perfil/editar/:id' element={<EditStudentPage />} />
             <Route path='/cursos' element={<CoursePage />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />

@@ -10,8 +10,8 @@ const CategoryNavbar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav category-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav ">
                         <Nav className="me-auto">
                             <Link to="/cursos/filtro/tecnologia">Tecnología</Link>
                             <Link to="/cursos/filtro/diseno">Diseño</Link>
