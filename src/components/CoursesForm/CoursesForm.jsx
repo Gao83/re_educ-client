@@ -36,7 +36,6 @@ const CoursesForm = () => {
             .createOneCourse(courseData)
             .then(response => {
                 console.log(response)
-
             })
             .catch(err => console.log(err))
 
