@@ -8,6 +8,7 @@ import StudentProfile from "../pages/StudentProfile/StudentProfile"
 import EditStudentPage from "../pages/EditStudentPage/EditStudentPage"
 import CoursePage from "../pages/CoursesPage/CoursesPage"
 import CourseDetailsPage from "../pages/CourseDetailsPage/CourseDetailsPage"
+import CoursesFilteredByCategory from "../pages/CoursesFilteredByCategory/CoursesFilteredByCategory"
 
 
 const AppRoutes = () => {
@@ -23,6 +24,8 @@ const AppRoutes = () => {
             <Route path='/perfil/editar/:id' element={<EditStudentPage />} />
             <Route path='/cursos' element={<CoursePage />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
+            <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
+
 
         </Routes>
     )
