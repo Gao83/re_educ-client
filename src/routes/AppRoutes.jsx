@@ -21,7 +21,6 @@ const AppRoutes = () => {
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
             <Route path='/perfil' element={<StudentProfile />} />
             <Route path='/cursos' element={<CoursePage />} />
-            <Route path='/ratings' element={<Ratings />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
 
         </Routes>

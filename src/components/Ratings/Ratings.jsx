@@ -1,27 +1,47 @@
 import './Ratings.css'
-import { Container, Row, Col, Spinner } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import RatingCard from '../RatingCard/RatingCard'
+import { useEffect, useState } from "react"
+import ratingService from '../../services/rating.service'
 
-const Comments = ({ ratings }) => {
+const Ratings = ({ course_id }) => {
+
+    const [ratings, setRatings] = useState([])
+
+    useEffect(() => loadRatings(), [course_id])
+
+    const loadRatings = () => {
+        ratingService
+            .getAllComments(course_id)
+            .then(({ data }) => {
+                console.log(data)
+                setRatings(data)
+            })
+            .catch(err => console.log(err))
+    }
 
     return (
 
-        ratings
-            ?
-            <Container>
+        ratings ?
+
+            <Container >
+
+                <h1>Valoraciones</h1>
+                <hr />
                 {
                     ratings.map(rating => {
-                        return
-                        <RatingCard {...ratings} />
+
+                        return (
+                            <RatingCard {...rating} />
+
+                        )
+
                     })
                 }
-            </Container >
+            </Container>
             :
-            <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </Spinner>
-    )
+<div></div>    )
 
 }
 
-export default Comments
+export default Ratings

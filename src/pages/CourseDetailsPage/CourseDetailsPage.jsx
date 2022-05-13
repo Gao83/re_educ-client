@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import Loader from "../../components/Loader/Loader"
+import Ratings from "../../components/Ratings/Ratings"
 import courseService from "../../services/courses.service"
 import "./CourseDetailsPage.css"
 
@@ -9,9 +10,10 @@ const CourseDetailsPage = () => {
 
     const [courseDetail, setcourseDetails] = useState({})
 
-    useEffect(() => loadCourse(), [])
-
     const { course_id } = useParams()
+
+    useEffect(() => loadCourse(), [course_id])
+
 
     const loadCourse = () => {
         courseService
@@ -48,6 +50,9 @@ const CourseDetailsPage = () => {
                         </Col>
                     </Row>
                 </Container>
+                <h1>{courseDetail.title} </h1>
+                <h1>{courseDetail.description} </h1>
+                <Ratings course_id={course_id} />
             </> :
             <Loader />
     )
