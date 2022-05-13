@@ -36,7 +36,7 @@ const UserSignupForm = () => {
             .then(({ data }) => {
                 setSignupForm(data)
                 // closeModal()
-                navigate('/registro-detalles')
+                navigate('/iniciar-sesion')
             })
             .catch(err => console.log(err))
     }
@@ -62,7 +62,7 @@ const UserSignupForm = () => {
                     <option value="TEACHER">Profesional</option>
                 </Form.Select>
                 <div>
-                    <Button className='btn btn-warning' type="submit" style={{ width: '100%' }}>Registrar</Button>
+                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }}>Registrar</Button>
                 </div>
             </Form>
         </Container>

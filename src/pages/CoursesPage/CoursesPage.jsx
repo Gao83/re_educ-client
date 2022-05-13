@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap"
-
 import courseService from "../../services/courses.service"
 import { useEffect, useState } from "react"
 import CourseList from "../../components/CoursesList/CoursesList"

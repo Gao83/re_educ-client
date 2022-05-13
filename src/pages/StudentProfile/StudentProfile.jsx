@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
 import './StudentProfile.css'
-import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { Button, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
 import coursesService from '../../services/courses.service'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, Link} from 'react-router-dom'
 
 const StudentProfile = () => {
 
@@ -14,25 +14,21 @@ const StudentProfile = () => {
     const [userDetails, setUserDetails] = useState({})
     const [myCourses, setMyCourses] = useState([])
 
-    useEffect(() => {
-        getOneUser()
-        // getAllCourses()
-    }, [id])
+    // useEffect(() => {
+    //     getOneUser()
+    //     // getAllCourses()
+    // }, [id])
 
+    // const getOneUser = () => {
+    //     usersService
+    //         .getOneUser(id)
+    //         .then(({ data }) => {
+    //             console.log(data)
+    //             setUserDetails(data)
+    //         })
+    //         .then(err => console.log(err))
+    // }
 
-
-    const getOneUser = () => {
-        usersService
-            .getOneUser(id)
-            .then(({ data }) => {
-                console.log(data)
-                setUserDetails(data)
-            })
-            .then(err => console.log(err))
-    }
-    user ? console.log(user) : console.log('VACIOOOOOOO')
-
-    
     // const getAllCourses = () => {
     //     coursesService
     //         .getAllCourses()
@@ -40,12 +36,18 @@ const StudentProfile = () => {
     //         .then(err => console.log(err))
     // }
 
+
     return (
+
         user ?
+            <>
+                <div className="username-box">
+                    <h1>Este es tu perfil {user.username}</h1>
+                </div>
             <Container className="container-student">
                 <Row>
                     <Col md={{ span: 4, offset: 1 }}>
-                        <h1>Este es tu perfil {user.username}</h1>
+                            <Link to={`/perfil/editar/${user._id}`}><Button className='btn btn-dark btn-edit-profile' type="submit" style={{ width: '100%' }}>Editar perfil</Button></Link>
                         <hr></hr>
                         <p><strong>Intereses</strong></p>
                         <br></br>
@@ -73,9 +75,11 @@ const StudentProfile = () => {
                 </Row>
 
             </Container>
+            </>
             :
-            <h1>cargandoooo</h1>
-    )
+            <h1>Cargando</h1>
+        
+            )
 }
 
 
