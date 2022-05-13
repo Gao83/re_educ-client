@@ -17,6 +17,11 @@ class RatingService {
         })
     }
 
+
+    getAllComments = (course_id) => {
+        return this.api.get(`/comments/${course_id}`)
+    }
+
     createUserComment = (course) => {
         return this.api.post(`/course/${course}/create-comment`)
     }

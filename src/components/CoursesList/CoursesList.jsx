@@ -1,13 +1,9 @@
-
-import { Col, Container, Spinner } from "react-bootstrap"
+import { Col, Container } from "react-bootstrap"
 import CourseCard from "../CourseCard/CourseCard"
-
-
+import Loader from "../Loader/Loader"
 
 const CourseList = ({ courses }) => {
-
     return (
-
         courses
             ?
             <Container>
@@ -15,14 +11,10 @@ const CourseList = ({ courses }) => {
                     courses.map(course => {
                         return (
                             <Col key={course._id}>
-
-                                {/* <p>{course.title}</p> */}
                                 <>
-
                                     <CourseCard {...course} />
                                     <hr />
                                 </>
-
                             </Col>
                         )
                     })
@@ -30,10 +22,7 @@ const CourseList = ({ courses }) => {
 
             </Container>
             :
-            <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </Spinner>
-
+            <Loader />
     )
 }
 export default CourseList

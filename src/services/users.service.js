@@ -30,7 +30,7 @@ class UsersService {
     }
 
     getOneUser = (id) => {
-        return this.api.get(`/${id}`)
+        return this.api.get(`/details/${id}`)
     }
 
     updateOneUser = (id, userData) => {
