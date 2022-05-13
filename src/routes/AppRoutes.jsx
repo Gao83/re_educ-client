@@ -6,6 +6,7 @@ import UserSignupDetailsPage from "../pages/UsersignupDetailsPage/UserSignupDeta
 import UserLoginPage from "../pages/UserLoginPage/UserLoginPage"
 import StudentProfile from "../pages/StudentProfile/StudentProfile"
 import CoursePage from "../pages/CoursesPage/CoursePage"
+import EditStudentPage from "../pages/EditStudentPage/EditStudentPage"
 
 
 const AppRoutes = () => {
@@ -17,10 +18,9 @@ const AppRoutes = () => {
             <Route path='/registro' element={<UserSignupPage />} />
             <Route path='/registro-detalles' element={<UserSignupDetailsPage />} />
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
-            <Route path='/perfil' element={<StudentProfile/>}/>  
+            <Route path='/perfil' element={<StudentProfile />} />  
+            <Route path='/perfil/editar/:id' element={<EditStudentPage />} />
             <Route path='/cursos' element={<CoursePage />} />
-
-
         </Routes>
     )
 }

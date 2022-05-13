@@ -25,8 +25,6 @@ const SearchBar = () => {
         }
     }
 
-    console.log(searchByInput)
-
     return (
         <div>
             <div className='searchbar'>

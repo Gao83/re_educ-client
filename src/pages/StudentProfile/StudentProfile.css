@@ -14,3 +14,17 @@
     background-color: aquamarine;
     height: 300px;
 }
+
+.username-box {
+    background-color: rgb(38, 38, 38);
+    height: 200px;
+    width: 100%;
+    color: white;
+}
+
+.username-box h1 {
+    font-size: 4em;
+    line-height: 200px;
+    padding-left: 60px;
+    font-family: 'DM Serif Display',serif;
+}
