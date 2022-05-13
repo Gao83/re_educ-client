@@ -1,0 +1,13 @@
+.course-details-hero {
+    background-color: #212429;
+    color: aliceblue;
+    padding: 10px 0px;
+    margin-bottom: 50px;
+
+}
+
+.course-details-hero h1,
+p {
+    padding: 10px;
+    padding-left: 100px;
+}

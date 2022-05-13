@@ -1,4 +1,4 @@
-import {  Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useState } from 'react'
 import coursesService from '../../services/courses.service'
 import './SearchBar.css'
@@ -24,8 +24,6 @@ const SearchBar = () => {
                 .catch(err => console.log(err))
         }
     }
-
-    console.log(searchByInput)
 
     return (
         <div>

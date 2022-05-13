@@ -1,6 +1,6 @@
 // import './Navigation.css'
 import { Navbar, Container, Nav } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 
 const CategoryNavbar = () => {
@@ -12,29 +12,17 @@ const CategoryNavbar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#">Tecnología</Nav.Link>
-                            <Nav.Link href="#">Diseño</Nav.Link>
-                            <Nav.Link href="#">Marketing</Nav.Link>
-                            <Nav.Link href="#">Informática y software</Nav.Link>
-                            <Nav.Link href="#">Música</Nav.Link>
-                            <Nav.Link href="#">Salud y fitness</Nav.Link>
-                            <SearchBar />
+                            <Link href="#">Tecnología</Link>
+                            <Link href="#">Diseño</Link>
+                            <Link href="#">Marketing</Link>
+                            <Link href="#">Informática y software</Link>
+                            <Link href="#">Música</Link>
+                            <Link href="#">Salud y fitness</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {/* <Navbar >
-                <Container>
-                    <Nav className="category-navbar">
-                        <Nav.Link href="#">Tecnología</Nav.Link>
-                        <Nav.Link href="#">Diseño</Nav.Link>
-                        <Nav.Link href="#">Marketing</Nav.Link>
-                        <Nav.Link href="#">Informática y software</Nav.Link>
-                        <Nav.Link href="#">Música</Nav.Link>
-                        <Nav.Link href="#">Salud y fitness</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar> */}
+
         </>
 
     )

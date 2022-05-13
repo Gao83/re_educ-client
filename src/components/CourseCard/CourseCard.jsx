@@ -6,12 +6,9 @@ import { Link } from "react-router-dom"
 
 const CourseCard = ({ _id, title, courseImg, headline, price, avgRating }) => {
 
-
-
     return (
         <Container>
             <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-
                 <Row>
                     <Col md={{ span: 3, offset: 1 }}>
                         <Card style={{ width: '100%' }}>

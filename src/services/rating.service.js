@@ -22,7 +22,7 @@ class RatingService {
         return this.api.post(`/comments/${course_id}`)
     }
 
-    createUserComment = (course) => {
+    createUserComment = (course_id) => {
         return this.api.post(`/course/${course_id}/create-comment`)
     }
 

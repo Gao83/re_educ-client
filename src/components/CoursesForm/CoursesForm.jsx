@@ -23,8 +23,6 @@ const CoursesForm = () => {
             [name]: value
         })
 
-
-
     }
     const handleIsPaidInput = (e) => {
         setIsPaid(e.target.checked)
