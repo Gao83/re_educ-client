@@ -1,6 +1,7 @@
 // import './Navigation.css'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import SearchBar from '../SearchBar/SearchBar'
 import './CategoryNavbar.css'
 
 const CategoryNavbar = () => {
