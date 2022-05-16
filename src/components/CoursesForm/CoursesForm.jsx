@@ -12,10 +12,14 @@ const CoursesForm = () => {
         content: '',
         duration: '',
         price: 0,
-        category: ''
+        category: '',
+        courseImg: '',
+        courseVideo: ''
     })
-
+    
+    const { title, headline, description, requirements, content, duration, price, courseImg, courseVideo } = courseData
     const [loadingImage, setLoadingImage] = useState(false)
+    const [loadingVideo, setLoadingVideo] = useState(false)
 
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
@@ -24,6 +28,7 @@ const CoursesForm = () => {
             [name]: value
         })
     }
+
 
     const handleIsPaidInput = (e) => {
         setIsPaid(e.target.checked)
@@ -38,6 +43,7 @@ const CoursesForm = () => {
             })
             .catch(err => console.log(err))
     }
+
     const handleImageUpload = (e) => {
         setLoadingImage(true)
         const uploadData = new FormData()
@@ -50,19 +56,40 @@ const CoursesForm = () => {
             })
             .catch(err => console.log(err))
     }
-    const { title, headline, description, requirements, content, duration, price } = courseData
+
+    const handleVideoUpload = (e) => {
+        setLoadingVideo(true)
+        const uploadData = new FormData()
+        uploadData.append('videoFile', e.target.files[0])
+        uploadService
+            .uploadVideo(uploadData)
+            .then(({ data }) => {
+                setLoadingVideo(false)
+                setCourseData({ ...courseData, courseVideo: data.cloudinary_url })
+            })
+            .catch(err => console.log(err))
+    }
+
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col} className="mb-3" controlId="title">
-                        <Form.Label>Titulo del Curso</Form.Label>
+                        <Form.Label>Título del Curso</Form.Label>
                         <Form.Control type="text" value={title} onChange={handleInputChange} name='title' />
                     </Form.Group >
+
+                </Row>
+                <Row className="mb-3">
                     <Form.Group as={Col} className="mb-3" controlId="courseImg">
-                        <Form.Label>Selecciona una imagen</Form.Label>
+                        <Form.Label>Selecciona una imagen descriptiva del curso</Form.Label>
                         <Form.Control type="file" onChange={handleImageUpload} />
                     </Form.Group >
+                    <Form.Group as={Col} className="mb-3" controlId="courseVideo">
+                        <Form.Label>Selecciona el contenido audiovisual del curso</Form.Label>
+                        <Form.Control type="file" onChange={handleVideoUpload} />
+                    </Form.Group >
+
                 </Row>
                 <Form.Group className="mb-3" controlId="headline">
                     <Form.Label>Encabezado</Form.Label>
@@ -107,7 +134,7 @@ const CoursesForm = () => {
                         </Form.Select>
                     </Form.Group>
                 </Row>
-                <Button variant="dark" type="submit" disabled={loadingImage}>{loadingImage ? 'Cargando imagen...' : 'Crear nuevo curso'} </Button>
+                <Button variant="dark" type="submit" disabled={loadingImage || loadingVideo}>{loadingImage || loadingVideo ? 'Cargando...' : 'Crear nuevo curso'} </Button>
             </Form>
         </Container>
     )

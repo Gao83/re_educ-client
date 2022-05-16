@@ -18,7 +18,10 @@ class UploadService {
     }
 
     uploadImage(imageForm) {
-        return this.api.post('/', imageForm)
+        return this.api.post('/image', imageForm)
+    }
+    uploadVideo(videoForm) {
+        return this.api.post('/video', videoForm)
     }
 }
 
