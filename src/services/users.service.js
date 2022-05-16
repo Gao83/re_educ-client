@@ -37,6 +37,10 @@ class UsersService {
         return this.api.post(`/edit/${id}`, userData)
     }
 
+    updateImage = (id, img) => {
+        return this.api.post(`/edit/${id}/image`, img)
+    }
+
     deleteUser = (id) => {
         return this.api.post(`/delete/${id}`)
     }

@@ -1,4 +1,10 @@
-.category-nav{
-
+.me-auto.navbar-nav a{
     color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding: 10px;
+    padding-left: 20px;
+    text-decoration: none;
 }
+
+

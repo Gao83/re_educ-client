@@ -20,11 +20,12 @@ const CategoryNavbar = () => {
                             <Link to="/cursos/filtro/musica">Música</Link>
                             <Link to="/cursos/filtro/salud-y-fitness">Salud y fitness</Link>
                             <Link to="/cursos/filtro/otros">Otros</Link>
+                            {/* <Link></Link> */}
 
+                            <SearchBar />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-                <SearchBar/>
             </Navbar>
         </>
     )
