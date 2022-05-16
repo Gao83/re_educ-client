@@ -1,5 +1,7 @@
 import { Card, Col, Row } from "react-bootstrap"
 import "./CourseCardSmall.css"
+import { Link } from 'react-router-dom'
+
 
 const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) => {
 
@@ -28,6 +30,7 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
     }
     return (
         <div className="body-score-card">
+            <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
             <Card>
                 <Card.Img variant="top" src={courseImg} />
                 <Card.Body>
@@ -45,7 +48,8 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
                 </Card.Body>
 
             </Card >
-        </div>
+        </Link>
+        </div >
     )
 }
 export default CourseCardSmall

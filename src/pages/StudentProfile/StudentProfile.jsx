@@ -4,6 +4,7 @@ import './StudentProfile.css'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
 import { Link } from 'react-router-dom'
+import CourseListByUser from '../../components/CourseListByUser/CourseListByUser'
 
 const StudentProfile = () => {
 
@@ -43,22 +44,21 @@ const StudentProfile = () => {
                                 <img src={profileImg}></img>
                             </div>
                             <Link to={`/perfil/editar/${_id}`}><Button className='btn btn-dark btn-edit-profile' type="submit" style={{ width: '100%' }}>Editar perfil</Button></Link>
-
-                        </Col>
-
-
-                    </Row>
-
-                    <Row className="profile-courses-col">
-                        
-                        <Col md={{ span: 8, offset: 2 }} >
-                            <h1>Mis Cursos</h1>
-                            <hr></hr>
                         </Col>
                     </Row>
 
                 </Container>
+
+                
+                    <Col md={{ span: 6, offset: 3 }} >
+                        <h1>Mis Cursos</h1>
+                        <hr></hr>
+
+                        <CourseListByUser />
+                    </Col>
+         
             </>
+
             :
             <h1>Cargando</h1>
 

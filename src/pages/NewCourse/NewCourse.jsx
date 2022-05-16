@@ -6,8 +6,9 @@ const NewCourse = () => {
         <>
 
             <Container>
-                <h2>Crear nuevo curso</h2>
-                <hr />
+                <br />
+                <h2>Por favor, rellene el formulario de creación de nuevos cursos de Re_educ</h2>
+           
                 <CoursesForm />
             </Container>
         </>

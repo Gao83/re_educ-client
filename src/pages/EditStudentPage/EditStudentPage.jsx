@@ -15,6 +15,8 @@ const EditStudentPage = () => {
                     <hr />
                     <UserSignupDetailsForm id={id} />
                 </Col>
+
+                
             </Container>
         </>
     )
