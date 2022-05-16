@@ -14,7 +14,9 @@ const CoursesForm = () => {
         price: 0,
         category: ''
     })
+
     const [loadingImage, setLoadingImage] = useState(false)
+
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
         setCourseData({
@@ -22,9 +24,11 @@ const CoursesForm = () => {
             [name]: value
         })
     }
+
     const handleIsPaidInput = (e) => {
         setIsPaid(e.target.checked)
     }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         courseServices
