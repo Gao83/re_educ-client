@@ -11,3 +11,7 @@
     text-align: center;
     padding-top: 120px;
 }
+
+.carousel-item {
+    overflow-x: scroll;
+}

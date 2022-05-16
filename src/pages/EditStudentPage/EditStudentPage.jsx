@@ -1,4 +1,3 @@
-import usersService from '../../services/users.service'
 import UserSignupDetailsForm from '../../components/UserSignupDetailsForm/UserSignupDetailsForm'
 import { Container, Col } from 'react-bootstrap'
 import './EditStudentPage.css'

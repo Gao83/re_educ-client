@@ -5,7 +5,27 @@ import usersService from '../../services/users.service'
 import uploadService from '../../services/upload.service'
 import { useNavigate } from 'react-router-dom'
 
-const UserSignupDetailsForm = ({ id }) => {
+const UserSignupDetailsForm = ({ id}) => {
+
+    const [imageForm, setImageForm] = useState()
+    const [loadingImage, setLoadingImage] = useState(false)
+
+    const handleImageUpload = e => {
+
+        setLoadingImage(true)
+
+        const formData = new FormData()
+        formData.append('imageData', e.target.files[0])
+
+        uploadService
+            .uploadImage(formData)
+            .then(({ data }) => {
+                setLoadingImage(false)
+                console.log(data)
+                setImageForm({ ...imageForm, profileImg: data.cloudinary_url })
+            })
+            .catch(err => console.log(err))
+    }
 
     const [signupDetailsForm, setSignupDetailsForm] = useState({
         interests: '',
@@ -13,25 +33,7 @@ const UserSignupDetailsForm = ({ id }) => {
         aboutMe: '',
         profileImg: ''
     })
-
-    const [loadingImage, setLoadingImage] = useState(false)
-    
-    const handleImageUpload = (e) => {
-        
-        setLoadingImage(true)
-        
-        const formData = new FormData()
-        formData.append('imageData', e.target.files[0])
-        
-        uploadService
-        .uploadImage(formData)
-        .then(({ data }) => {
-            setLoadingImage(false)
-            setSignupDetailsForm({ ...signupDetailsForm, profileImg: data.cloudinary_url })
-        })
-        .catch(err => console.log(err))
-    }
-    
+     
     const handleInputChange = e => {
         const { name, value } = e.target
         setSignupDetailsForm({
@@ -44,15 +46,15 @@ const UserSignupDetailsForm = ({ id }) => {
     
     function handleSubmit(e) {
         e.preventDefault()
-
+        
         usersService
-            .updateOneUser(id, signupDetailsForm)
-            .then(({ data }) => {
-                console.log(data)
-                setSignupDetailsForm(data)
-                navigate('/')
-            })
-            .catch(err => console.log(err))
+        .updateOneUser(id, signupDetailsForm)
+        .then(({ data }) => {
+            console.log(data)
+            setSignupDetailsForm(data)
+            navigate('/')
+        })
+        .catch(err => console.log(err))
     }
 
     const { interests, aboutMe, education, profileImg } = signupDetailsForm
@@ -92,7 +94,7 @@ const UserSignupDetailsForm = ({ id }) => {
 
                 <Form.Group className="mb-3" controlId="profileImg">
                     <Form.Label>Foto de perfil</Form.Label>
-                    <Form.Control type="file" value={profileImg} onChange={handleImageUpload} />
+                    <Form.Control type="file" value={profileImg} onChange={handleImageUpload}  />
                 </Form.Group >
                 <Button className="edit-button" variant="dark" type="submit" disabled={loadingImage}>Completar perfil</Button>
             </Form>

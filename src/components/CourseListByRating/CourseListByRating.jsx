@@ -16,9 +16,6 @@ const CourseByRating = ({ coursesByRating }) => {
     ]
 
     return (
-
-
-
         coursesByRating ?
             <>
 

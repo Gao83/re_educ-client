@@ -46,8 +46,6 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
 
             </Card >
         </div>
-
-
     )
 }
 export default CourseCardSmall

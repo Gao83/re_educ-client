@@ -36,10 +36,9 @@ const SearchBar = () => {
                 <input type="text" placeholder='Busca un curso' onChange={handleByInput} value={searchStr} />
             </div>
             <div>
-
                 {
                     searchByInput.length !== 0 && (
-                        <div className='desplegable'>
+                        <div id='dropdown'>
                             {
                                 searchByInput.map(course => {
                                     return (        // search result

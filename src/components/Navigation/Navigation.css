@@ -2,3 +2,17 @@
     padding-right: 3rem;
     padding-left: 3rem;
 }
+
+.navbar a:hover {
+    color: red;
+}
+
+.logout {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 29px;
+    cursor: pointer;
+}
+
+.user-navbar {
+    font-weight: 500;
+}

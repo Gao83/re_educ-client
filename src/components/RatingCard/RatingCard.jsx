@@ -19,7 +19,6 @@ const RatingCard = ({ image, content, rating, likes, owner }) => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-
         </Container >
 
     )

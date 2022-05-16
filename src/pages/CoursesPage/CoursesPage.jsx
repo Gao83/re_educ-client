@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap"
 import courseService from "../../services/courses.service"
 import { useEffect, useState } from "react"
 import CourseList from "../../components/CoursesList/CoursesList"
-import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
+import TeacherList from "../../components/TeachersList/TeacherList"
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])
@@ -34,9 +34,6 @@ const CoursePage = () => {
             })
             .catch(err => console.log(err))
     }
-
-
-
     return (
         <>
             <Container>
@@ -48,6 +45,12 @@ const CoursePage = () => {
                 <hr />
                 <CourseList courses={courses} />
 
+            </Container>
+
+            <Container>
+                <h1>Listado de profesores/as</h1>
+                <hr />
+                <TeacherList />
             </Container>
         </>
     )
