@@ -1,9 +1,9 @@
 .course-details-hero {
     background-color: #26292d;
     color: aliceblue;
-    padding: 10px 0px;
-    margin-bottom: 50px;
-
+    height: 350px;
+    flex-flow: row nowrap;
+    width: 100%;
 }
 
 .course-details-hero h1,

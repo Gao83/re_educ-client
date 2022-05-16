@@ -30,18 +30,10 @@ const CoursesForm = () => {
     }
 
 
-    // const handleInputChangeVideo = (e) => {
-    //     const { name, value } = e.currentTarget
-    //     setCourseData({
-    //         ...courseData,
-    //         [name]: value
-    //     })
-    // }
-
-
     const handleIsPaidInput = (e) => {
         setIsPaid(e.target.checked)
     }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         courseServices
