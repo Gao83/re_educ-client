@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
 import CourseList from "../../components/CoursesList/CoursesList"
 import TeacherList from "../../components/TeachersList/TeacherList"
+import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])

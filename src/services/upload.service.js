@@ -13,13 +13,12 @@ class UploadService {
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
             }
-
             return config
         })
     }
 
     uploadImage(imageForm) {
-        return this.api.post('/image', imageForm)
+        return this.api.post('/', imageForm)
     }
 }
 

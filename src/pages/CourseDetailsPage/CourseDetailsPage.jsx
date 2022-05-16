@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
+import CardOneCourse from "../../components/CardOneCourse/CardOneCourse"
 import Loader from "../../components/Loader/Loader"
 import Ratings from "../../components/Ratings/Ratings"
 import courseService from "../../services/courses.service"
@@ -29,29 +30,35 @@ const CourseDetailsPage = () => {
         courseDetail
             ?
             <>
-                <div className="course-details-hero">
-                    <h1>{title} </h1>
-                    <p>{headline} </p>
-                    <p>{avgRating}</p>
-                    <p>Creado por: {owner?.username} </p>
-                </div>
-                <Container>
-                    <Row>
-                        <Col md={{ span: 12 }}>
+                <Row>
+                    <Col md={{ span: 8 }}>
 
-                            <h4>Requisitos</h4>
-                            <ul>
-                                <li>
-                                    <p>{requirements}</p>
-                                </li>
-                            </ul>
-                            <h4>Detalles</h4>
-                            <p>{description} </p>
-                        </Col>
-                    </Row>
-                </Container>
-                <h1>{courseDetail.title} </h1>
-                <h1>{courseDetail.description} </h1>
+                        <div className="course-details-hero">
+                            <h1>{title} </h1>
+                            <p>{headline} </p>
+                            <p>{avgRating}</p>
+                            <p>Creado por: {owner?.username} </p>
+                        </div>
+                        <Container>
+                            <Row>
+                                <Col md={{ span: 12 }}>
+
+                                    <h4>Requisitos</h4>
+                                    <ul>
+                                        <li>
+                                            <p>{requirements}</p>
+                                        </li>
+                                    </ul>
+                                    <h4>Detalles</h4>
+                                    <p>{description} </p>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Col>
+                    <Col md={{ span: 3 }}>
+                        <CardOneCourse {...courseDetail} />
+                    </Col>
+                </Row>
                 <Ratings course_id={course_id} />
             </> :
             <Loader />
