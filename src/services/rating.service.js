@@ -22,8 +22,8 @@ class RatingService {
         return this.api.get(`/comments/${course_id}`)
     }
 
-    createUserComment = (course) => {
-        return this.api.post(`/course/${course}/create-comment`)
+    createUserComment = (course, ratingData) => {
+        return this.api.post(`/course/${course}/create-comment`, ratingData)
     }
 
     updateOneUserComment = (id, userData) => {

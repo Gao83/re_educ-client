@@ -1,5 +1,4 @@
 import { Container } from 'react-bootstrap'
-import RatingCard from '../RatingCard/RatingCard'
 import './RatingsTeacher.css'
 import { useEffect, useState } from "react"
 import usersService from '../../services/users.service'
@@ -18,12 +17,13 @@ const RatingsTeachers = () => {
         usersService
             .getAllTeacherRatings(id)
             .then(({ data }) => {
+                console.log(data)
 
                 setTeacherRatings(data)
             })
             .catch(err => console.log(err))
     }
-   
+
     return (
 
         teacherRatings ?
@@ -33,7 +33,7 @@ const RatingsTeachers = () => {
                 <h1>Valoraciones de Profe</h1>
                 <hr />
                 {
-                    <p>{teacherRatings.avgRating}</p>   
+                    <p>{teacherRatings.avgRating}</p>
 
                 }
             </Container>

@@ -50,7 +50,7 @@ const StudentProfile = () => {
                     </Row>
 
                     <Row className="profile-courses-col">
-
+                        
                         <Col md={{ span: 8, offset: 2 }} >
                             <h1>Mis Cursos</h1>
                             <hr></hr>

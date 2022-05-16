@@ -14,6 +14,7 @@ const UserSignupDetailsForm = ({ id }) => {
         aboutMe: '',
         profileImg: ''
     })
+    
     const [loadingImage, setLoadingImage] = useState(false)
 
     const handleInputChange = e => {

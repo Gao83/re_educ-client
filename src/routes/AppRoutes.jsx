@@ -12,6 +12,7 @@ import CoursesFilteredByCategory from "../pages/CoursesFilteredByCategory/Course
 import RatingsTeachers from "../components/RatingsTeacher/RatingsTeacher"
 import UserProfile from "../pages/UserProfile/UserProfile"
 import CourseMedia from "../pages/CourseMedia/CourseMedia"
+import CreateRating from "../components/CreateRating/CreateRating"
 
 
 const AppRoutes = () => {
@@ -29,12 +30,9 @@ const AppRoutes = () => {
             <Route path='/cursos' element={<CoursePage />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
             <Route path="/cursos/:course_id/media" element={<CourseMedia />} />
+            <Route path="/cursos/:course_id/media/valorar" element={<CreateRating />} />
             <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
-
-
             <Route path='/perfil/:id' element={<UserProfile />} />
-
-
         </Routes>
     )
 }
