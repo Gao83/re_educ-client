@@ -48,6 +48,10 @@ class CoursesService {
         return this.api.get(`/coursesOrderedByRating`)
     }
 
+    getCoursesListByUser = () => {
+        return this.api.get(`/coursesListByUser`)
+    }
+
 }
 
 

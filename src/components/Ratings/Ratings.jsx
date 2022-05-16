@@ -33,7 +33,6 @@ const Ratings = ({ course_id }) => {
 
                         return (
                             <RatingCard {...rating} />
-
                         )
 
                     })

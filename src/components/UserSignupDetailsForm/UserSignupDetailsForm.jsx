@@ -49,7 +49,7 @@ const UserSignupDetailsForm = ({ id }) => {
             .updateOneUser(id, signupDetailsForm)
             .then(({ data }) => {
                 setSignupDetailsForm(data)
-                navigate('/')
+                navigate('/perfil')
             })
             .catch(err => console.log(err))
     }

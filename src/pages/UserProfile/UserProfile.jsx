@@ -11,6 +11,8 @@ const UserProfile = () => {
     const [userDetails, setUserDetails] = useState({})
     const { id } = useParams()
 
+    console.log(id)
+
 
     useEffect(() => {
 

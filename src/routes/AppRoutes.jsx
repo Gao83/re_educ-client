@@ -30,8 +30,6 @@ const AppRoutes = () => {
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
             <Route path="/cursos/:course_id/media" element={<CourseMedia />} />
             <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
-
-
             <Route path='/perfil/:id' element={<UserProfile />} />
 
 
