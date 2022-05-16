@@ -11,6 +11,7 @@ import CourseDetailsPage from "../pages/CourseDetailsPage/CourseDetailsPage"
 import CoursesFilteredByCategory from "../pages/CoursesFilteredByCategory/CoursesFilteredByCategory"
 import RatingsTeachers from "../components/RatingsTeacher/RatingsTeacher"
 import UserProfile from "../pages/UserProfile/UserProfile"
+import CourseMedia from "../pages/CourseMedia/CourseMedia"
 
 
 const AppRoutes = () => {
@@ -27,6 +28,8 @@ const AppRoutes = () => {
             <Route path='/profesores/:id' element={<RatingsTeachers />} />
             <Route path='/cursos' element={<CoursePage />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
+            <Route path="/cursos/:course_id/media" element={<CourseMedia />} />
+
             <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
 
 

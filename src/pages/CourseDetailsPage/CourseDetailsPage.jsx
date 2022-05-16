@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
+import CardOneCourse from "../../components/CardOneCourse/CardOneCourse"
 import Loader from "../../components/Loader/Loader"
 import Ratings from "../../components/Ratings/Ratings"
 import courseService from "../../services/courses.service"
@@ -29,6 +30,7 @@ const CourseDetailsPage = () => {
         courseDetail
             ?
             <>
+                <CardOneCourse {...courseDetail} />
                 <div className="course-details-hero">
                     <h1>{title} </h1>
                     <p>{headline} </p>
@@ -50,8 +52,9 @@ const CourseDetailsPage = () => {
                         </Col>
                     </Row>
                 </Container>
-                <h1>{courseDetail.title} </h1>
-                <h1>{courseDetail.description} </h1>
+
+
+
                 <Ratings course_id={course_id} />
             </> :
             <Loader />

@@ -13,7 +13,6 @@ class UploadService {
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
             }
-
             return config
         })
     }
