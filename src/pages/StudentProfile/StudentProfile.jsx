@@ -2,9 +2,8 @@ import { useState, useEffect, useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
 import './StudentProfile.css'
 import { Button, Container, Row, Col } from 'react-bootstrap'
-import coursesService from '../../services/courses.service'
 import usersService from '../../services/users.service'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const StudentProfile = () => {
 
@@ -16,20 +15,13 @@ const StudentProfile = () => {
         usersService
             .getOneUser(user._id)
             .then(({ data }) => {
-                setUserDetails(data)
+                setUserDetails(data)             
                 console.log(data)
             })
             .catch(err => console.log(err))
     }, [])
 
-    // const [myCourses, setMyCourses] = useState([])
 
-    // const getAllCourses = () => {
-    //     coursesService
-    //         .getAllCourses()
-    //         .then((courseData) => setMyCourses(courseData))
-    //         .then(err => console.log(err))
-    // }
 
     const { username, _id, interests, education, aboutMe, profileImg } = userDetails
 
@@ -51,7 +43,7 @@ const StudentProfile = () => {
                             <br></br>
                             <p><strong>Sobre mí</strong></p>
                             <p>{aboutMe}</p>
-                            <Link to={`/perfil/editar/${user._id}`}><Button className='btn btn-dark btn-edit-profile' type="submit" style={{ width: '100%' }}>Editar perfil</Button></Link>
+                            <Link to={`/perfil/editar/${_id}`}><Button className='btn btn-dark btn-edit-profile' type="submit" style={{ width: '100%' }}>Editar perfil</Button></Link>
                         </Col>
                         <Col md={{ span: 6, offset: 1 }}>
                             <h1>Imagen de perfil</h1>

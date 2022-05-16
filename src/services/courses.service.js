@@ -44,6 +44,9 @@ class CoursesService {
     filterBySearch = (search) => {
         return this.api.get(`/filter-courses/${search}`)
     }
+    filterByRating = () => {
+        return this.api.get(`/coursesOrderedByRating`)
+    }
 
 }
 

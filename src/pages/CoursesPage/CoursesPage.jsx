@@ -2,10 +2,21 @@ import { Container } from "react-bootstrap"
 import courseService from "../../services/courses.service"
 import { useEffect, useState } from "react"
 import CourseList from "../../components/CoursesList/CoursesList"
+import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])
-    useEffect(() => loadCourses(), [])
+    const [coursesByRating, setCoursesByRating] = useState([])
+
+    useEffect(() => {
+
+        allCourseTogether()
+    }, [])
+
+    const allCourseTogether = () => {
+        loadCourses()
+        loadCoursesByRating()
+    }
 
     const loadCourses = () => {
         courseService
@@ -15,14 +26,33 @@ const CoursePage = () => {
             })
             .then(err => console.log(err))
     }
+    const loadCoursesByRating = () => {
+        courseService
+            .filterByRating()
+            .then(({ data }) => {
+                setCoursesByRating(data)
+            })
+            .catch(err => console.log(err))
+    }
+
+
+
     return (
         <>
             <Container>
-                <h1>Listado de cursos</h1>
+                <h3>Los mejor valorados</h3>
+                <hr />
+                <CourseByRating coursesByRating={coursesByRating} />
+
+                <h3>Listado de cursos</h3>
                 <hr />
                 <CourseList courses={courses} />
+
             </Container>
         </>
     )
 }
 export default CoursePage
+
+
+
