@@ -1,14 +1,16 @@
 .container-student {
     margin-top: 40px;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     height: 600px;
-    /* background-color: red; */
     font-family: 'Montserrat', sans-serif;
 }
 
 .container-student h1 {
     font-size: 2em;
 }
+
+.container-student h5 {
+    font-family: 'DM Serif Display', serif;}
 
 .courses-carousel {
     background-color: aquamarine;
@@ -27,4 +29,17 @@
     line-height: 200px;
     padding-left: 60px;
     font-family: 'DM Serif Display',serif;
+}
+
+.img-box img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-edit-profile{
+    margin-top: 20px;
+}
+
+.profile-courses-col{
+    margin-top: 100px;
 }

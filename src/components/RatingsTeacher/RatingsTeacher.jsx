@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap'
 import RatingCard from '../RatingCard/RatingCard'
+import './RatingsTeacher.css'
 import { useEffect, useState } from "react"
 import usersService from '../../services/users.service'
 import { useParams } from 'react-router-dom'
@@ -27,7 +28,7 @@ const RatingsTeachers = () => {
 
         teacherRatings ?
 
-            <Container >
+            <Container className="rating-home" >
 
                 <h1>Valoraciones de Profe</h1>
                 <hr />

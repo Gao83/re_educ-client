@@ -2,22 +2,32 @@ footer {
     background-color: #212429;
     width: 100%;
     color: white;
-    font-size: .7em;
-    justify-content:center;
+    /* justify-content:center; */
     display:flex;
     float: left;
     bottom: 0;
     height: 200px;
     padding: 3px;
-    font-size: 1.3em;
-    text-align: center;
     margin-top: 50px;
 
 }
 
-.logo-footer{
+.col-cookie p{
+    font-size: 1.1em;
+    text-align: left;
+    line-height: 35px;
+    margin-top: 20px;
+}
+
+.col-developed p {
+    font-size: 1.1em;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.logo-footer img {
     width: 300px;
     line-height: 300px;
     display: block;
-    padding-top: 20px;
+    margin-top: 40px;
 }

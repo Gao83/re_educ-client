@@ -24,6 +24,7 @@ const Navigation = () => {
                                 ?
                                 <>
                                     <Link to="/perfil" className="nav-link">Perfil</Link>
+                                    <Link to="/cursos" className="nav-link">Cursos</Link>
                                     <Link to="/cursos/crear" className="nav-link">Registro de Cursos</Link>
                                     <div className="nav-link logout" onClick={logOutUser}>Cerrar sesión</div>
                                     <Link to="#" className="nav-link">

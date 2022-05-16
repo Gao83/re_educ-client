@@ -7,10 +7,10 @@ const CategoryNavbar = () => {
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" className="category-navbar">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav category-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav ">
+                    <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Link to="/cursos/filtro/tecnologia">Tecnología</Link>
                             <Link to="/cursos/filtro/diseno">Diseño</Link>

@@ -3,8 +3,9 @@
     padding-left: 3rem;
 }
 
-.navbar a:hover {
-    color: red;
+.me-auto a:hover {
+
+    color: rgb(255, 165, 39);
 }
 
 .logout {
