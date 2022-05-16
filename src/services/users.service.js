@@ -41,6 +41,10 @@ class UsersService {
         return this.api.post(`/delete/${id}`)
     }
 
+    getAllTeacherRatings = (id) => {
+        return this.api.get(`/getRatingsTeacher/${id}`)
+    }
+
 }
 
 const usersService = new UsersService()
