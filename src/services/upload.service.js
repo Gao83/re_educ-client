@@ -4,7 +4,7 @@ class UploadService {
 
     constructor() {
 
-        this.api = axios.create({ baseUrl: `${process.env.REACT_APP_API_URL}/upload` })
+        this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/upload` })
 
         this.api.interceptors.request.use((config) => {
 
@@ -19,7 +19,7 @@ class UploadService {
     }
 
     uploadImage(imageForm) {
-        return this.api.post('/image', imageForm)
+        return this.api.post('/', imageForm)
     }
 }
 

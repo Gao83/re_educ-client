@@ -3,6 +3,9 @@ import courseService from "../../services/courses.service"
 import { useEffect, useState } from "react"
 import CourseList from "../../components/CoursesList/CoursesList"
 import TeacherList from "../../components/TeachersList/TeacherList"
+import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
+
+
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])

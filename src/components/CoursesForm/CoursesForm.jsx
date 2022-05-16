@@ -14,9 +14,13 @@ const CoursesForm = () => {
         content: '',
         duration: '',
         price: 0,
-        category: ''
+        category: '',
+        courseImg: ''
     })
+
     const [loadingImage, setLoadingImage] = useState(false)
+
+    const { title, headline, description, requirements, content, duration, price, courseImg } = courseData
 
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
@@ -29,33 +33,34 @@ const CoursesForm = () => {
         setIsPaid(e.target.checked)
     }
 
+    const handleImageUpload = (e) => {
+
+        setLoadingImage(true)
+
+        const uploadData = new FormData()
+        // for (let i = 0; i < e.target.files.length; i++)
+            uploadData.append('imageData', e.target.files[0])
+
+        uploadService
+            .uploadImage(uploadData)
+            .then(({ data }) => {
+                setCourseData({ ...courseData, courseImg: data.cloudinary_urls })
+                setLoadingImage(false)
+            })
+            .catch(err => console.log(err))
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         courseServices
-            .createOneCourse(courseData)
+            .createOneCourse({ title, headline, description, requirements, content, duration, price, courseImg })
             .then(response => {
                 console.log(response)
             })
             .catch(err => console.log(err))
 
     }
-    const handleImageUpload = (e) => {
 
-        setLoadingImage(true)
-
-        const uploadData = new FormData()
-        uploadData.append('imageData', e.target.files[0])
-
-        uploadService
-            .uploadImage(uploadData)
-            .then(({ data }) => {
-                setLoadingImage(false)
-                setCourseData({ ...courseData, courseImg: data.cloudinary_url })
-            })
-            .catch(err => console.log(err))
-    }
-
-    const { title, headline, description, requirements, content, duration, price } = courseData
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
@@ -67,7 +72,7 @@ const CoursesForm = () => {
 
                     <Form.Group as={Col} className="mb-3" controlId="courseImg">
                         <Form.Label>Selecciona una imagen</Form.Label>
-                        <Form.Control type="file" onChange={handleImageUpload} />
+                        <Form.Control type="file" onChange={handleImageUpload}  />
                     </Form.Group >
                 </Row>
                 <Form.Group className="mb-3" controlId="headline">
