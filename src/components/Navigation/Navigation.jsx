@@ -1,10 +1,23 @@
 import './Navigation.css'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { Navbar, Container, Nav, Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/auth.context'
+import UserLoginForm from '../UserLoginForm/UserLoginForm'
+import UserSignupForm from '../UserSignupForm/UserSignupForm'
+
 
 const Navigation = () => {
+
+    const [showModal, setShowModal] = useState(false)
+    const [showSignupModal, setShowSignupModal] = useState(false)
+
+    const openModal = () => setShowModal(true)
+    const openSignupModal = () => setShowSignupModal(true)
+
+    const closeModal = () => setShowModal(false)
+    const closeSignupModal = () => setShowSignupModal(false)
+
 
     const { user, logOutUser, isLoggedIn } = useContext(AuthContext)
 
@@ -12,7 +25,7 @@ const Navigation = () => {
         <>
             <Navbar bg="light" variant="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/"><img className="logo-navbar" src="./../../img/re_educ_logo.png" alt="logo" /></Navbar.Brand>
+                    <Navbar.Brand href="/"><img className="logo-navbar" src="./../../img/re_educ_logo_2.png" alt="logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
                     <Nav className="me-auto">
@@ -35,8 +48,19 @@ const Navigation = () => {
                                 </>
                                 :
                                 <>
-                                    <Link to="/registro" className="nav-link">Registro</Link>
-                                    <Link to="/iniciar-sesion" className="nav-link">Iniciar sesión</Link>
+                                    <Link to="#" className="nav-link" onClick={openSignupModal}>Registro</Link>
+                                    <Modal show={showSignupModal} onHide={closeSignupModal}>
+                                        <Modal.Body>
+                                            <UserSignupForm />
+                                        </Modal.Body>
+                                    </Modal>
+
+                                    <Link to="#" className="nav-link" onClick={openModal}>Iniciar sesión</Link>
+                                    <Modal show={showModal} onHide={closeModal} >
+                                        <Modal.Body >
+                                            <UserLoginForm />
+                                        </Modal.Body >
+                                    </Modal>
                                 </>
                         }
 

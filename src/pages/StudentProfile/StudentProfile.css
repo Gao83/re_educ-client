@@ -9,8 +9,13 @@
     font-size: 2em;
 }
 
+.container-student p {
+    margin-top: 50px;
+}
+
 .container-student h5 {
-    font-family: 'DM Serif Display', serif;}
+    font-family: 'DM Serif Display', serif;
+}
 
 .courses-carousel {
     background-color: aquamarine;
@@ -41,9 +46,10 @@
 }
 
 .profile-courses-col{
-
     display: block;
     margin-top: 100px;
 
 }
+
+
 

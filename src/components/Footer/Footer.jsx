@@ -15,7 +15,7 @@ const Footer = () => {
                             <p><strong>Developed by</strong><br></br>Isaac Miralles <br></br> Cristian Calderón<br></br>  & Jesús Martín</p>
                         </Col>
                         <Col md={{ span: 4 }} className="logo-footer">
-                            <img  src="./../../img/re_educ_logo_white.png" alt="logo" />
+                            <img  src="./../../img/re_educ_logo_2_white.png" alt="logo" />
                         </Col>
                     </Row>
                 </Container>

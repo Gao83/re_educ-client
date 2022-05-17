@@ -4,7 +4,7 @@ import './StudentProfile.css'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
 import { Link } from 'react-router-dom'
-import CourseListByUser from '../../components/CourseListByUser/CourseListByUser'
+// import CourseListByUser from '../../components/CourseListByUser/CourseListByUser'
 
 const StudentProfile = () => {
 
@@ -48,15 +48,12 @@ const StudentProfile = () => {
                     </Row>
 
                 </Container>
-
-                
-                    <Col md={{ span: 6, offset: 3 }} >
+                    {/* <Col md={{ span: 6, offset: 3 }} >
                         <h1>Mis Cursos</h1>
                         <hr></hr>
 
                         <CourseListByUser />
-                    </Col>
-         
+                    </Col> */}
             </>
 
             :

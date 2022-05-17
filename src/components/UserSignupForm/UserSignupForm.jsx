@@ -36,33 +36,35 @@ const UserSignupForm = () => {
             .then(({ data }) => {
                 setSignupForm(data)
                 // closeModal()
-                navigate('/iniciar-sesion')
+                navigate('/')
             })
             .catch(err => console.log(err))
     }
 
     return (
 
-        <Container className="signup-form">
+        <Container >
             <Form onSubmit={handleSubmit}>
+                <h1>Regístrate</h1>
+                <hr />
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label>Nombre Usuario</Form.Label>
-                    <Form.Control type="text" value={username} onChange={handleInputChange} name="username" />
+                    <Form.Control className="input-signup-form" type="text" value={username} onChange={handleInputChange} name="username" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email </Form.Label>
-                    <Form.Control type="text" value={email} onChange={handleInputChange} name="email" />
+                    <Form.Control className="input-signup-form" type="text" value={email} onChange={handleInputChange} name="email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Contraseña</Form.Label>
-                    <Form.Control type="text" value={password} onChange={handleInputChange} name="password" />
+                    <Form.Control className="input-signup-form" type="text" value={password} onChange={handleInputChange} name="password" />
                 </Form.Group>
                 <Form.Select aria-label="Default select example" value={role} onChange={handleInputChange} name='role' >
                     <option value="USER">Estudiante</option>
                     <option value="TEACHER">Profesional</option>
                 </Form.Select>
                 <div>
-                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }}>Registrar</Button>
+                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }} >Registrar</Button>
                 </div>
             </Form>
         </Container>

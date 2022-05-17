@@ -1,0 +1,16 @@
+.signup-box {
+    height: 400px;
+    background-color: rgb(255, 162, 48);
+    width: 250px;
+    margin-left: 250px;
+    margin-top: 60px;
+    z-index: 0;
+}
+
+.signup-box p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.2em;
+    text-align: left;
+    z-index: 1000;
+    margin-right: 30px;
+}

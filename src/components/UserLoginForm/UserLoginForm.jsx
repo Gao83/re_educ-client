@@ -45,7 +45,8 @@ const UserLoginForm = () => {
     return (
 
         <Form onSubmit={handleSubmit} >
-
+            <h1>Iniciar Sesión</h1>
+            <hr />
             <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" name="email" placeholder='Introduzca su email' value={email} onChange={handleInputChange}/>
