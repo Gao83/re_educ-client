@@ -14,8 +14,6 @@ const CourseDetailsPage = () => {
     const { course_id } = useParams()
 
     useEffect(() => loadCourse(), [course_id])
-
-
     const loadCourse = () => {
         courseService
             .getOneCourse(course_id)

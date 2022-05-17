@@ -1,10 +1,9 @@
 import { useState } from "react"
 import ratingService from "../../services/rating.service"
 import { FaStar } from "react-icons/fa"
-import "./CreateRating.css"
 import { Button, Container, Form } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import "./CreateRating.css"
+import "./CreateRatingCourse.css"
 import { useNavigate } from "react-router-dom"
 
 const CreateRating = () => {
@@ -34,14 +33,13 @@ const CreateRating = () => {
         e.preventDefault()
 
         ratingService
-            .createUserComment(course_id, ratingCourseData)
+            .createCourseComment(course_id, ratingCourseData)
             .then(({ data }) => {
                 setRatingCourseData(data)
                 navigate(`/cursos/${course_id}`)
             })
             .catch(err => console.log(err))
     }
-
 
 
 
@@ -81,7 +79,6 @@ const CreateRating = () => {
                 </Form>
             </Container>
         </>
-
     )
 
 

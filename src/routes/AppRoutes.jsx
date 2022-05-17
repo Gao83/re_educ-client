@@ -9,10 +9,8 @@ import EditStudentPage from "../pages/EditStudentPage/EditStudentPage"
 import CoursePage from "../pages/CoursesPage/CoursesPage"
 import CourseDetailsPage from "../pages/CourseDetailsPage/CourseDetailsPage"
 import CoursesFilteredByCategory from "../pages/CoursesFilteredByCategory/CoursesFilteredByCategory"
-import RatingsTeachers from "../components/RatingsTeacher/RatingsTeacher"
-import UserProfile from "../pages/UserProfile/UserProfile"
+import TeacherProfile from "../pages/TeacherProfile/TeacherProfile"
 import CourseMedia from "../pages/CourseMedia/CourseMedia"
-import CreateRating from "../components/CreateRating/CreateRating"
 import StripeContainer from "../components/StripeContainer/StripeContainer"
 
 
@@ -27,15 +25,12 @@ const AppRoutes = () => {
             <Route path='/iniciar-sesion' element={<UserLoginPage />} />
             <Route path='/perfil' element={<StudentProfile />} />
             <Route path='/perfil/editar/:id' element={<EditStudentPage />} />
-            <Route path='/profesores/:id' element={<RatingsTeachers />} />
             <Route path='/cursos' element={<CoursePage />} />
             <Route path="/cursos/:course_id" element={<CourseDetailsPage />} />
             <Route path="/cursos/:course_id/media" element={<CourseMedia />} />
-            <Route path="/cursos/:course_id/media/valorar" element={<CreateRating />} />
             <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
-            <Route path='/perfil/:id' element={<UserProfile />} />
             <Route path='/stripe' element={<StripeContainer />} />
-
+            <Route path='/perfil/:id' element={<TeacherProfile />} />
         </Routes>
     )
 }

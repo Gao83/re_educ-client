@@ -23,13 +23,10 @@ const CourseByRating = ({ coursesByRating }) => {
 
                     {
                         coursesByRating.map(eachCourse => {
-                            return (
-                                <>
 
-                                    <Col key={eachCourse._id} >
-                                        <CourseCardSmall {...eachCourse} />
-                                    </Col>
-                                </>
+                            return (
+                                <CourseCardSmall key={eachCourse?._id} {...eachCourse} />
+
                             )
 
                         })
