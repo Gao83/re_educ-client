@@ -13,6 +13,7 @@ import RatingsTeachers from "../components/RatingsTeacher/RatingsTeacher"
 import UserProfile from "../pages/UserProfile/UserProfile"
 import CourseMedia from "../pages/CourseMedia/CourseMedia"
 import CreateRating from "../components/CreateRating/CreateRating"
+import StripeContainer from "../components/StripeContainer/StripeContainer"
 
 
 const AppRoutes = () => {
@@ -33,6 +34,8 @@ const AppRoutes = () => {
             <Route path="/cursos/:course_id/media/valorar" element={<CreateRating />} />
             <Route path="/cursos/filtro/:category" element={<CoursesFilteredByCategory />} />
             <Route path='/perfil/:id' element={<UserProfile />} />
+            <Route path='/stripe' element={<StripeContainer />} />
+
         </Routes>
     )
 }
