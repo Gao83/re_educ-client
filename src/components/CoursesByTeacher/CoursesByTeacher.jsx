@@ -1,30 +1,26 @@
-import { Col, Container, Row } from "react-bootstrap"
+import { useEffect, useState } from "react"
+import coursesService from "../../services/courses.service"
 import CourseCardSmall from "../CourseCardSmall/CourseCardSmall"
 import Loader from "../Loader/Loader"
 import Carousel from "react-elastic-carousel";
-import coursesService from "../../services/courses.service";
-import { useState, useEffect } from 'react'
 
+const CoursesByTeacher = ({ id }) => {
 
-const CoursesListByUser = () => {
-
-    const [ListByUser, SetListByUser] = useState([])
+    const [coursesByTeacher, setCoursesByTeacher] = useState([])
 
     useEffect(() => {
-
-        loadCoursesbyUser()
+        loadTeacherCourses()
     }, [])
 
-    const loadCoursesbyUser = () => {
+    const loadTeacherCourses = () => {
 
         coursesService
-            .getCoursesListByUser()
+            .getCoursesById(id)
             .then(({ data }) => {
-                SetListByUser(data)
+                setCoursesByTeacher(data)
             })
-            .then(err => console.log(err))
+            .catch(err => console.log(err))
     }
-
     const breakpoints = [
         { width: 400, itemsToShow: 1 },
         { width: 500, itemsToShow: 2 },
@@ -35,24 +31,24 @@ const CoursesListByUser = () => {
     ]
 
     return (
-        ListByUser ?
+        coursesByTeacher ?
             <>
 
                 <Carousel breakPoints={breakpoints}>
-
                     {
-                        ListByUser.map(eachCourse => {
+                        coursesByTeacher.map(course => {
                             return (
-
-                                <CourseCardSmall key={eachCourse._id} {...eachCourse} />
-
+                                <CourseCardSmall key={course._id} {...course} />
                             )
-
                         })
                     }
+
                 </Carousel>
             </> :
             <Loader />
+
     )
+
 }
-export default CoursesListByUser
+
+export default CoursesByTeacher

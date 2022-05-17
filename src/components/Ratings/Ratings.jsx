@@ -32,14 +32,14 @@ const Ratings = ({ course_id }) => {
                     ratings.map(rating => {
 
                         return (
-                            <RatingCard {...rating} />
+                            <RatingCard key={rating._id} {...rating} />
                         )
 
                     })
                 }
             </Container>
             :
-<div></div>    )
+            <div></div>)
 
 }
 

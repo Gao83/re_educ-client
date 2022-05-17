@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Container, Nav, Navbar, Modal } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
-import CreateRating from "../../components/CreateRating/CreateRating"
+import CreateRatingCourse from "../../components/CreateRatingCourse/CreateRatingCourse"
 import Loader from "../../components/Loader/Loader"
 import coursesService from "../../services/courses.service"
 import './CourseMedia.css'
@@ -31,6 +31,9 @@ const CourseMedia = () => {
             .catch(err => console.log(err))
     }
 
+
+
+
     return (
         mediaCourse ?
             <div>
@@ -44,10 +47,9 @@ const CourseMedia = () => {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto ">
                                 <Link className="link-comments" onClick={openModal} to='#'>Valorar el curso</Link>
-                                <Link className="link-comments" to="#link">Dejar pregunta</Link>
                                 <Modal show={showModal} onHide={closeModal}>
                                     <Modal.Body>
-                                        <CreateRating />
+                                        <CreateRatingCourse />
                                     </Modal.Body>
                                 </Modal>
                             </Nav>
