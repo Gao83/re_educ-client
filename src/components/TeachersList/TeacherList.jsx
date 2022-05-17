@@ -27,12 +27,11 @@ const TeacherList = () => {
                 {
                     teachers.map(teacher => {
                         return (
-                            <Col key={teacher._id}>
-                                <>
-                                    <TeacherCard {...teacher} />
-                                    <hr />
-                                </>
-                            </Col>
+
+
+                            <TeacherCard key={teacher?._id} {...teacher} />
+
+
                         )
                     })
                 }

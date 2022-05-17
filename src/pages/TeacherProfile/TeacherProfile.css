@@ -1,0 +1,48 @@
+.container-teacher {
+    margin-top: 40px;
+    /* padding-top: 40px; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-teacher h1 {
+    font-size: 2em;
+}
+
+.container-teacher h5 {
+    font-family: 'DM Serif Display', serif;
+}
+
+.courses-carousel {
+    background-color: aquamarine;
+    height: 300px;
+}
+
+.username-box {
+    background-color: rgb(38, 38, 38);
+    height: 200px;
+    width: 100%;
+    color: white;
+}
+
+.username-box h1 {
+    font-size: 4em;
+    line-height: 200px;
+    padding-left: 60px;
+    font-family: 'DM Serif Display', serif;
+}
+
+.img-box img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-edit-profile {
+    margin-top: 20px;
+}
+
+.profile-courses-col {
+
+    display: block;
+    margin-top: 100px;
+
+}

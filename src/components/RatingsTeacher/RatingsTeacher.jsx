@@ -1,44 +1,46 @@
-import { Container } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 import './RatingsTeacher.css'
 import { useEffect, useState } from "react"
-import usersService from '../../services/users.service'
+import "./RatingsTeacher.css"
+import RatingCard from '../RatingCard/RatingCard'
+import Loader from '../Loader/Loader'
+import ratingService from '../../services/rating.service'
 import { useParams } from 'react-router-dom'
 
-const RatingsTeachers = () => {
-
-    const [teacherRatings, setTeacherRatings] = useState({})
-
-    const { id } = useParams()
-
-    useEffect(() => loadRatingsTeacher(), [])
 
 
-    const loadRatingsTeacher = () => {
-        usersService
-            .getAllTeacherRatings(id)
+const RatingsTeachers = ({ id }) => {
+    const [teacherRatings, setTeacherRatings] = useState([])
+
+    useEffect(() => loadRatingTeachers(), [])
+
+ 
+    const loadRatingTeachers = () => {
+        ratingService
+            .getTeacherComments(id)
             .then(({ data }) => {
-                console.log(data)
 
                 setTeacherRatings(data)
             })
             .catch(err => console.log(err))
     }
-
     return (
 
+
         teacherRatings ?
-
-            <Container className="rating-home" >
-
-                <h1>Valoraciones de Profe</h1>
-                <hr />
+            <>
                 {
-                    <p>{teacherRatings.avgRating}</p>
-
+                    teacherRatings.map(rating => {
+                        return (
+                            <RatingCard key={rating?._id}  {...rating} />
+                        )
+                    })
                 }
-            </Container>
-            :
-            <div></div>)
+            </> :
+            <Loader />
+
+    )
+
 }
 
 export default RatingsTeachers

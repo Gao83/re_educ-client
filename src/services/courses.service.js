@@ -6,9 +6,7 @@ class CoursesService {
         this.api = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/courses` })
 
         this.api.interceptors.request.use((config) => {
-
             const storedToken = localStorage.getItem("authToken");
-
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` }
             }
@@ -50,6 +48,10 @@ class CoursesService {
 
     getCoursesListByUser = () => {
         return this.api.get(`/coursesListByUser`)
+    }
+
+    getCoursesById = (id) => {
+        return this.api.get(`/getCoursesById/${id}`)
     }
 
 }
