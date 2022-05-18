@@ -1,0 +1,12 @@
+.stripe {
+    width: 500px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    height: 200px;
+}
+
+.stripe Button {
+    margin-top: 100px;
+    background-color: green;
+}

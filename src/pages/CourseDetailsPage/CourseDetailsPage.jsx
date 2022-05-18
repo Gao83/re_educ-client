@@ -25,7 +25,7 @@ const CourseDetailsPage = () => {
     const { title, owner, requirements, description, headline, avgRating } = courseDetail
 
     return (
-        courseDetail
+        courseDetail    
             ?
             <>
                 <Row>
