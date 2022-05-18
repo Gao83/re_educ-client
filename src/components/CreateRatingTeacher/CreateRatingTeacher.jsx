@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ratingService from "../../services/rating.service"
 import { FaStar } from "react-icons/fa"
 import { Button, Container, Form } from "react-bootstrap"
@@ -6,43 +6,39 @@ import { useNavigate } from "react-router-dom"
 
 const CreateRatingTeacher = ({ id }) => {
 
-    console.log(id)
 
-    const [ratingCourseData, setRatingCourseData] = useState({
+    const [ratingTeacherData, setRatingTeacherData] = useState({
         content: '',
         rating: 0
     })
+
+
+    const { content, rating } = ratingTeacherData
+
     const [hover, setHover] = useState(null)
 
     const navigate = useNavigate()
-    const { content, rating } = ratingCourseData
 
 
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
-        setRatingCourseData({
-            ...ratingCourseData,
+        setRatingTeacherData({
+            ...ratingTeacherData,
             [name]: value
         })
     }
 
     const handleSubmit = (e) => {
-
         e.preventDefault()
 
         ratingService
-            .createUserComment(id, ratingCourseData)
+            .createTeacherComment(id, ratingTeacherData)
             .then(({ data }) => {
-                setRatingCourseData(data)
-                //navigate(`/cursos/${course_id}`)
+                setRatingTeacherData(data)
+                navigate(`/perfil/${id}`)
             })
             .catch(err => console.log(err))
     }
-
-
-
-
-
     const arrRating = [1, 2, 3, 4, 5]
     return (
         <>

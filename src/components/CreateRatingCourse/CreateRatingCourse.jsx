@@ -14,10 +14,12 @@ const CreateRating = () => {
         content: '',
         rating: 0
     })
+
+    const { content, rating } = ratingCourseData
+
     const [hover, setHover] = useState(null)
 
     const navigate = useNavigate()
-    const { content, rating } = ratingCourseData
 
 
     const handleInputChange = (e) => {

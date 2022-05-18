@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import RatingsTeachers from '../../components/RatingsTeacher/RatingsTeacher'
 import Loader from '../../components/Loader/Loader'
-import CoursesListByUser from '../../components/CourseListByUser/CourseListByUser'
 import CoursesByTeacher from '../../components/CoursesByTeacher/CoursesByTeacher'
 import CreateRatingTeacher from '../../components/CreateRatingTeacher/CreateRatingTeacher'
 
@@ -62,7 +61,7 @@ const UserProfile = () => {
                                     <Link className="link-comments" onClick={openModal} to='#'>Valorar al instructor</Link>
                                     <Modal show={showModal} onHide={closeModal}>
                                         <Modal.Body>
-                                            <CreateRatingTeacher />
+                                            <CreateRatingTeacher id={id} />
                                         </Modal.Body>
                                     </Modal>
                                 </Col>

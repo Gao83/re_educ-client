@@ -37,8 +37,8 @@ class RatingService {
         return this.api.post(`/course/delete/${id}`)
     }
 
-    createTeacherComment = (teacher) => {
-        return this.api.post(`/teacher/${teacher}/create-comment`)
+    createTeacherComment = (teacher, ratingData) => {
+        return this.api.post(`/teacher/${teacher}/create-comment`, ratingData)
     }
 
 
