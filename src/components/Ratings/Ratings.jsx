@@ -26,8 +26,6 @@ const Ratings = ({ course_id }) => {
 
             <Container >
 
-                <h1>Valoraciones</h1>
-                <hr />
                 {
                     ratings.map(rating => {
 

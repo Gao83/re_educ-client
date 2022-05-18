@@ -1,3 +1,13 @@
 .star {
     color: #f1c44d
 }
+
+.course-card img{
+    height:200px;
+    object-fit: cover;
+}
+
+.course-card.container{
+ margin-bottom: 40px;
+}
+

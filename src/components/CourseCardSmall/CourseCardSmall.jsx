@@ -34,11 +34,10 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
             <Card>
                 <Card.Img variant="top" src={courseImg} />
                 <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    {headline}
+                        <Card.Title className="overflow-ellipsis"><h6>{title}</h6></Card.Title>
                     <div>
                         <div className="score-card-small ">
-                            <p>{avgRating}</p>
+                            {/* <p>{avgRating}</p> */}
                             <p className="star">{starts(result)}</p>
                         </div>
                         <div>

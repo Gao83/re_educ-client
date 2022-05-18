@@ -6,14 +6,13 @@ const CourseList = ({ courses }) => {
     return (
         courses
             ?
-            <Container>
+            <Container className="courses-list-container">
                 {
                     courses.map(course => {
                         return (
                             <Col key={course._id}>
                                 <>
                                     <CourseCard {...course} />
-                                    <hr />
                                 </>
                             </Col>
                         )

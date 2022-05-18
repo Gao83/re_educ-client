@@ -1,11 +1,14 @@
 body {
     /* font-family: 'DM Serif Display',serif; */
-    font-family: 'Montserrat',sans-serif;
-    
+    font-family: 'Montserrat', sans-serif;
+}
+
+#root{
+    background-color: rgb(248, 249, 250);
+    height: 100%;
 }
 
 .logo-navbar {
     width: 200px;
 
 }
-

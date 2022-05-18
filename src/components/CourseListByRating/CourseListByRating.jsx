@@ -18,7 +18,6 @@ const CourseByRating = ({ coursesByRating }) => {
     return (
         coursesByRating ?
             <>
-
                 <Carousel breakPoints={breakpoints}>
 
                     {
@@ -26,9 +25,7 @@ const CourseByRating = ({ coursesByRating }) => {
 
                             return (
                                 <CourseCardSmall key={eachCourse?._id} {...eachCourse} />
-
                             )
-
                         })
                     }
                 </Carousel>

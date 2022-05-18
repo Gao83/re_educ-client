@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row, Carousel } from "react-bootstrap"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar } from "@fortawesome/free-solid-svg-icons"
 import "./CourseCard.css"
 import { Link } from "react-router-dom"
 
@@ -9,7 +9,7 @@ const CourseCard = ({ _id, title, courseImg, headline, price, avgRating }) => {
     return (
 
         <>
-            {/* <Container>
+            <Container className="course-card">
                 <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
                     <Row>
                         <Col md={{ span: 3, offset: 1 }}>
@@ -36,31 +36,7 @@ const CourseCard = ({ _id, title, courseImg, headline, price, avgRating }) => {
                         </Col>
                     </Row>
                 </Link>
-            </Container > */}
-
-            <Carousel variant="dark">
-                <Carousel.Item className="carousel-item">
-                    <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-                        <Card.Img variant="top" src={courseImg} />
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Title>{price}€</Card.Title>
-                    </Link>
-                </Carousel.Item>
-                <Carousel.Item className="carousel-item">
-                    <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-                        <Card.Img variant="top" src={courseImg} />
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Title>{price}€</Card.Title>
-                    </Link>
-                </Carousel.Item>
-                <Carousel.Item className="carousel-item">
-                    <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-                        <Card.Img variant="top" src={courseImg} />
-                        <Card.Title>{title}</Card.Title>
-                        <Card.Title>{price}€</Card.Title>
-                    </Link>
-                </Carousel.Item>
-            </Carousel>
+            </Container >
         </>
     )
 }

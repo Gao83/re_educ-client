@@ -43,7 +43,7 @@ const StudentProfile = () => {
                             <div className="img-box">
                                 <img src={profileImg}></img>
                             </div>
-                            <Link to={`/perfil/editar/${_id}`}><Button className='btn btn-dark btn-edit-profile' type="submit" style={{ width: '100%' }}>Editar perfil</Button></Link>
+                            <Link to={`/perfil/editar/${_id}`}><Button className='btn btn-dark' id='btn-edit-profile' type="submit">Editar perfil</Button></Link>
                         </Col>
                     </Row>
 
