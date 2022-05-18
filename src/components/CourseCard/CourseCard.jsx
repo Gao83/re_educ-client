@@ -4,30 +4,38 @@ import { faStar } from "@fortawesome/free-solid-svg-icons"
 import "./CourseCard.css"
 import { Link } from "react-router-dom"
 
-const CourseCard = ({ _id, title, courseImg, headline, price, courses }) => {
+const CourseCard = ({ _id, title, courseImg, headline, price, courses, avgRating }) => {
 
     return (
 
-        <>
-            <div className="body-score-card">
-                <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-                    <Card>
-                        <Card.Img variant="top" src={courseImg} />
+        <div className="course-card-container">
+            <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
+                <Row>
+                    <Col md={{ span: 3, offset: 1 }}>
+                        <Card className="course-card">
+                            <Card.Img variant="top" src={courseImg} />
+                        </Card>
+                    </Col>
+                    <Col md={{ span: 6 }}>
                         <Card.Body>
-                            <Card.Title>{title}</Card.Title>
-                            {/* {headline} */}
-                            <div className="score-card-small ">
-                                <p>{courses}</p>
-                                {/* <p className="star">{starts(result)}</p> */}
-                            </div>
+                            <Row>
+                                <Col md={{ span: 6 }}>
+                                    <Card.Title>{title}</Card.Title>
+                                </Col>
+                                <Col md={{ span: 6 }} className="d-flex justify-content-end">
+                                    <Card.Title>{price}€</Card.Title>
+                                </Col>
+                            </Row>
+                            <Card.Text>{headline}</Card.Text>
+
+                            <Col md={{ span: 6 }}>
+                                <Card.Title>{avgRating} &nbsp; <FontAwesomeIcon className="star" icon={faStar} /> </Card.Title>
+                            </Col>
                         </Card.Body>
-                    </Card >
-                    <div className="card-price">
-                        {price/100}€
-                    </div>
-                </Link>
-            </div >
-        </>
+                    </Col>
+                </Row>
+            </Link>
+        </div >
     )
 }
 export default CourseCard

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container, Nav, Navbar, Modal } from "react-bootstrap"
+import { Container, Nav, Navbar, Modal, Col, Row, Button } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import CreateRatingCourse from "../../components/CreateRatingCourse/CreateRatingCourse"
 import Loader from "../../components/Loader/Loader"
@@ -11,6 +11,9 @@ const CourseMedia = () => {
     const [showModal, setShowModal] = useState(false)
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
+
+    const [showMore, setShowMore] = useState(false);
+
 
 
     const { course_id } = useParams()
@@ -36,27 +39,39 @@ const CourseMedia = () => {
 
     return (
         mediaCourse ?
-            <div>
-                <h1>{title}</h1>
-                <video src={courseVideo} width="720" height="550" controls>
-                    Your browser does not support the video tag.
-                </video>
+            <>
+                <Container className="container-media">
+                    <Row>
+                        <h1>{title}</h1>
+                        <Col className="video-box" md={{ span: 8 }}>
+                            <video src={courseVideo} width="750" height="450" controls >
+                                Your browser does not support the video tag.
+                            </video>
 
-                <Navbar bg="dark" expand="lg" className="navbar-courseMedia">
-                    <Container>
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto ">
-                                <Link className="link-comments" onClick={openModal} to='#'>Valorar el curso</Link>
-                                <Modal show={showModal} onHide={closeModal}>
-                                    <Modal.Body>
-                                        <CreateRatingCourse />
-                                    </Modal.Body>
-                                </Modal>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-            </div> :
+                            {/* <Navbar bg="dark" expand="lg" className="navbar-courseMedia">
+                                <Container>
+                                    <Navbar.Collapse id="basic-navbar-nav">
+                                        <Nav className="me-auto ">
+                                            <Link className="link-comments" onClick={openModal} to='#'>Valorar el curso</Link>
+                                            <Modal show={showModal} onHide={closeModal}>
+                                                <Modal.Body>
+                                                    <CreateRatingCourse />
+                                                </Modal.Body>
+                                            </Modal>
+                                        </Nav>
+                                    </Navbar.Collapse>
+                                </Container>
+                            </Navbar> */}
+                        </Col>
+                        <Col md={{ span: 4 }} className="list-videos">
+
+                            <Button id="btn-see-more-video" onClick={() => setShowMore(!showMore)}>{showMore ? "Contenido" : <h5>Vídeo 1</h5>}</Button>
+
+                        </Col>
+                    </Row>
+                </Container>
+            </>
+            :
             <Loader />
 
     )

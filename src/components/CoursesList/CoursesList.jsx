@@ -41,9 +41,20 @@ const CourseList = ({ courses }) => {
     return (
         displayCourse
             ?
-            <Container>
-                {displayCourse}
-            </Container>
+            <div breakPoints={breakpoints} >
+                {
+                    courses.map(course => {
+                        return (
+                            <Col key={course._id}>
+                                <>
+                                    <CourseCard {...course} />
+                                </>
+                            </Col>
+                        )
+                    })
+                }
+
+            </div>
             :
             <Loader />
     )
