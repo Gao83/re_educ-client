@@ -7,10 +7,12 @@
     top: 300px;
     z-index: 1000;
     background-color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.cardText img {
+.cardText>img {
     width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -32,4 +34,8 @@
 
 .bodyCard li {
     margin-bottom: 10px;
+}
+
+.btn-buy:hover{
+    background-color: rgb(213, 213, 213);
 }

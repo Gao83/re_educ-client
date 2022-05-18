@@ -26,6 +26,7 @@ const CourseByRating = ({ coursesByRating }) => {
                             return (
                                 <CourseCardSmall key={eachCourse?._id} {...eachCourse} />
                             )
+
                         })
                     }
                 </Carousel>

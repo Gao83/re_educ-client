@@ -27,8 +27,8 @@ const Navigation = () => {
                     <Navbar.Brand href="/"><img className="logo-navbar" src="./../../img/re_educ_logo_2.png" alt="logo" /></Navbar.Brand>
                     <SearchBar />
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
-                    <Nav className="me-auto">
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto"  >
                         {
                             user && <Link to="/perfil" className="nav-link justify-content-end user-navbar"><strong>Hola, {user.username}</strong></Link>
                         }
@@ -59,11 +59,14 @@ const Navigation = () => {
                                         <Modal.Body >
                                             <UserLoginForm />
                                         </Modal.Body >
-                                    </Modal>
+                                        </Modal>
+                                        
+                          
                                 </>
                         }
 
-                    </Nav>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>

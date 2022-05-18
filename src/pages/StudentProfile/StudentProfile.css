@@ -22,40 +22,56 @@
     height: 300px;
 }
 
-.username-box {
+#username-box {
     background-color: rgb(38, 38, 38);
     height: 200px;
     width: 100%;
     color: white;
 }
 
-.username-box h1 {
-    font-size: 4em;
-    line-height: 200px;
-    padding-left: 60px;
-    font-family: 'DM Serif Display',serif;
+.username-box-first-letter {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 120px;
+    top: 180px;
+
 }
 
-.img-box{
+.username-box-first-letter h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3em;
+text-align: center;
+}
+
+
+
+#username-box h1 {
+    font-size: 4em;
+    line-height: 200px;
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+}
+
+.img-box {
     width: 200px;
     object-fit: cover;
 }
 
-.img-box img{
+.img-box img {
     height: 200px;
-    border-radius:50%;
+    border-radius: 50%;
 }
 
-#btn-edit-profile{
+#btn-edit-profile {
     margin-top: 20px;
-    width:200px;
+    width: 200px;
 }
 
-.profile-courses-col{
+.profile-courses-col {
     display: block;
     margin-top: 100px;
 
 }
-
-
-

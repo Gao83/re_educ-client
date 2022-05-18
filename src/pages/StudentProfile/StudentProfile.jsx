@@ -26,13 +26,15 @@ const StudentProfile = () => {
     }, [user?._id])
 
     const { username, _id, interests, education, aboutMe, profileImg, role } = userDetails
-    console.log(userDetails)
 
     return (
 
         userDetails ?
             <>
-                <div className="username-box">
+                <div id="username-box">
+                    {/* <div className="username-box-first-letter">
+                        <h2>{firstLetter}</h2>
+                    </div> */}
                     <h1>Este es tu perfil, {username}</h1>
                 </div>
                 <Container className="container-student">

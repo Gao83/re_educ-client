@@ -1,12 +1,13 @@
 .navbar-expand .navbar-nav .nav-link {
     padding-right: 3rem;
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
 }
 
-.me-auto a:hover {
-
+.basic-navbar-nav>a:hover{
     color: rgb(255, 165, 39);
-}
+} 
+
+
 
 .logout {
     font-family: 'Montserrat', sans-serif;

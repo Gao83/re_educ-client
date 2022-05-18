@@ -2,10 +2,13 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
+import usersService from '../../services/users.service'
 import './CategoryNavbar.css'
 const CategoryNavbar = () => {
 
-    const { isLoggedIn } = useContext(AuthContext)
+    const { isLoggedIn, user } = useContext(AuthContext)
+
+
 
 
     return (
@@ -25,7 +28,12 @@ const CategoryNavbar = () => {
                             {isLoggedIn
                                 ?
                                 <>
-                                    <Link to="/cursos/crear" className="nav-link">Registro de Cursos</Link>
+                                    {
+                                        (user.role === 'TEACHER') &&
+                                        <Link to="/cursos/crear" className="nav-link">
+                                                Registro de Cursos
+                                            </Link>
+                                    }
                                 </>
                                 :
                                 <>

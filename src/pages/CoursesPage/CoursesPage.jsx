@@ -39,21 +39,18 @@ const CoursePage = () => {
 
     return (
         <>
-            <Container className="container-courses-page">
-                
+            <div className="container-courses-page">
+
                 <h3>Los mejor valorados</h3>
                 <CourseByRating coursesByRating={coursesByRating} />
 
                 <h3>Listado de cursos</h3>
                 <CourseList courses={courses} />
 
-            </Container>
-
-            <Container className="container-courses-page">
                 <h3>Listado de profesores/as</h3>
                 <TeacherList />
-                
-            </Container>
+
+            </div>
         </>
     )
 }

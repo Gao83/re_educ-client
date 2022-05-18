@@ -16,7 +16,7 @@ const CardOneCourse = ({ _id, courseImg, price, duration }) => {
                 <h2>{price/100}€</h2>
                 <hr />
                 <Link to={`/${_id}/stripe`}>
-                    <Button>Comprar Curso</Button>
+                    <Button className="btn-dark" id="btn-buy">Comprar Curso</Button>
                 </Link>
                 <h6>Este curso ofrece</h6>
                 <ul>
