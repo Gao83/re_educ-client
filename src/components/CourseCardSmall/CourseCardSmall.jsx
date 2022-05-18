@@ -41,7 +41,7 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
                             <p className="star">{starts(result)}</p>
                         </div>
                         <div>
-                            {price}€
+                            {price/100}€
                         </div>
                     </div>
                 </Card.Body>

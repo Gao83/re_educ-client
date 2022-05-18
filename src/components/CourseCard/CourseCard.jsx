@@ -24,7 +24,7 @@ const CourseCard = ({ _id, title, courseImg, headline, price, avgRating }) => {
                                         <Card.Title>{title}</Card.Title>
                                     </Col>
                                     <Col md={{ span: 6 }} className="d-flex justify-content-end">
-                                        <Card.Title>{price}€</Card.Title>
+                                        <Card.Title>{price/100}€</Card.Title>
                                     </Col>
                                 </Row>
                                 <Card.Text>{headline}</Card.Text>
