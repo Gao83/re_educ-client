@@ -25,7 +25,7 @@ const CoursePage = () => {
             .then(({ data }) => {
                 setAllCourses(data)
             })
-            .then(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
     const loadCoursesByRating = () => {

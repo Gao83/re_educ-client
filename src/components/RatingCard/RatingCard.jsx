@@ -2,11 +2,9 @@ import { Card, Container } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import "./RatingCard.css"
-const RatingCard = ({ content, rating, likes, owner }) => {
+const RatingCard = ({ content, rating, owner }) => {
 
     return (
-
-
 
         <div className="rating-card">
             <div className="rating-card-header">

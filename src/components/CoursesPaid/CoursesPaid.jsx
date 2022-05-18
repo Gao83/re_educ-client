@@ -3,6 +3,7 @@ import Loader from "../Loader/Loader"
 import Carousel from "react-elastic-carousel";
 import coursesService from "../../services/courses.service";
 import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 
 
 const CoursesPaid = () => {
@@ -10,6 +11,7 @@ const CoursesPaid = () => {
     const [coursesPaid, SetCoursesPaid] = useState([])
 
     useEffect(() => {
+
         loadCoursesPaid()
     }, [])
 
@@ -18,8 +20,7 @@ const CoursesPaid = () => {
         coursesService
             .getCoursesPaidOut()
             .then(({ data }) => {
-                //console.log(data)
-                // SetCoursesPaid(data)
+                SetCoursesPaid(data)
             })
             .then(err => console.log('error de cursos', err))
     }
@@ -42,9 +43,9 @@ const CoursesPaid = () => {
                     {
                         coursesPaid.map(eachCourse => {
                             return (
-
-                                <CourseCardSmall key={eachCourse._id} {...eachCourse} />
-
+                                <Link to={`/cursos/${eachCourse._id}/media`}>
+                                    <CourseCardSmall key={eachCourse._id} {...eachCourse} />
+                                </Link>
                             )
 
                         })

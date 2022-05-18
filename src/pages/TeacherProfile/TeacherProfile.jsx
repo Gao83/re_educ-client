@@ -61,7 +61,9 @@ const UserProfile = () => {
                                     <Link className="link-comments" onClick={openModal} to='#'>Valorar al instructor</Link>
                                     <Modal show={showModal} onHide={closeModal}>
                                         <Modal.Body>
-                                            <CreateRatingTeacher id={id} />
+                                            <CreateRatingTeacher
+                                                id={id}
+                                                closeModal={closeModal} />
                                         </Modal.Body>
                                     </Modal>
                                 </Col>
