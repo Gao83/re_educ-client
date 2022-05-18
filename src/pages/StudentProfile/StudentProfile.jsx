@@ -22,12 +22,16 @@ const StudentProfile = () => {
     }, [user?._id])
 
     const { username, _id, interests, education, aboutMe, profileImg } = userDetails
+    // const firstLetter = username.charAt(0)
 
     return (
 
         user ?
             <>
-                <div className="username-box">
+                <div id="username-box">
+                    {/* <div className="username-box-first-letter">
+                        <h2>{firstLetter}</h2>
+                    </div> */}
                     <h1>Este es tu perfil, {username}</h1>
                 </div>
                 <Container className="container-student">
@@ -48,7 +52,7 @@ const StudentProfile = () => {
                     </Row>
 
                 </Container>
-                    {/* <Col md={{ span: 6, offset: 3 }} >
+                {/* <Col md={{ span: 6, offset: 3 }} >
                         <h1>Mis Cursos</h1>
                         <hr></hr>
 

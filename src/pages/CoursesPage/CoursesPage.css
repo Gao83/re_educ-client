@@ -1,8 +1,9 @@
 .container-courses-page h3 {
     font-family: 'DM Serif Display', serif;
-    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 3em;
     margin-top: 40px;
     margin-left: 120px;
+    margin-bottom: 30px;
 }
 
 .container-courses-page.container {
@@ -10,8 +11,8 @@
 }
 
 .container-courses-page {
-    width: 80%;
     margin: auto;
+    width: 90%;
 }
 
 .container-courses-page>hr {
@@ -51,8 +52,3 @@
 .rec-dot {
     display: none;
 }
-
-/* .container-courses-page h1 {
-    font-family: 'DM Serif Display', serif;
-    margin-top: 40px;
-} */
