@@ -1,0 +1,58 @@
+.container-courses-page h3 {
+    font-family: 'DM Serif Display', serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    margin-top: 40px;
+    margin-left: 120px;
+}
+
+.container-courses-page.container {
+    margin-bottom: 20px;
+}
+
+.container-courses-page {
+    width: 80%;
+    margin: auto;
+}
+
+.container-courses-page>hr {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.eWjCzc {
+    background-color: white !important;
+}
+
+.eAyARa {
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.eWjCzc:hover:enabled {
+    color: black !important;
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.eWjCzc:focus:enabled {
+    color: black !important;
+    background-color: white !important;
+    box-shadow: none !important;
+}
+
+.eWjCzc {
+    color: black !important;
+    background-color: white !important;
+    box-shadow: none !important;
+
+}
+
+.rec-dot {
+    display: none;
+}
+
+/* .container-courses-page h1 {
+    font-family: 'DM Serif Display', serif;
+    margin-top: 40px;
+} */

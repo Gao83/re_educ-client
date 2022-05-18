@@ -1,13 +1,16 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import SearchBar from '../SearchBar/SearchBar'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/auth.context'
 import './CategoryNavbar.css'
-
 const CategoryNavbar = () => {
+
+    const { isLoggedIn } = useContext(AuthContext)
+
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" className="category-navbar">
+            <Navbar collapseOnSelect expand="lg" id="category-navbar">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav category-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -19,7 +22,17 @@ const CategoryNavbar = () => {
                             <Link to="/cursos/filtro/musica">Música</Link>
                             <Link to="/cursos/filtro/salud-y-fitness">Salud y fitness</Link>
                             <Link to="/cursos/filtro/otros">Otros</Link>
-                            <SearchBar />
+                            {isLoggedIn
+                                ?
+                                <>
+                                    <Link to="/cursos/crear" className="nav-link">Registro de Cursos</Link>
+                                </>
+                                :
+                                <>
+                                </>
+                            }
+
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
