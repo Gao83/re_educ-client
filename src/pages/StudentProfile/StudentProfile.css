@@ -36,13 +36,19 @@
     font-family: 'DM Serif Display',serif;
 }
 
-.img-box img{
-    width: 100%;
+.img-box{
+    width: 200px;
     object-fit: cover;
 }
 
-.btn-edit-profile{
+.img-box img{
+    height: 200px;
+    border-radius:50%;
+}
+
+#btn-edit-profile{
     margin-top: 20px;
+    width:200px;
 }
 
 .profile-courses-col{

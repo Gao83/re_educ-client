@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import CourseByRating from "../../components/CourseListByRating/CourseListByRating"
 import CourseList from "../../components/CoursesList/CoursesList"
 import TeacherList from "../../components/TeachersList/TeacherList"
+import './CoursesPage.css'
 
 const CoursePage = () => {
     const [courses, setAllCourses] = useState([])
@@ -38,21 +39,20 @@ const CoursePage = () => {
 
     return (
         <>
-            <Container>
+            <Container className="container-courses-page">
+                
                 <h3>Los mejor valorados</h3>
-                <hr />
                 <CourseByRating coursesByRating={coursesByRating} />
 
                 <h3>Listado de cursos</h3>
-                <hr />
                 <CourseList courses={courses} />
 
             </Container>
 
-            <Container>
-                <h1>Listado de profesores/as</h1>
-                <hr />
+            <Container className="container-courses-page">
+                <h3>Listado de profesores/as</h3>
                 <TeacherList />
+                
             </Container>
         </>
     )

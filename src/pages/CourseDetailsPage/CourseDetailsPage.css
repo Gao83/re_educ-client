@@ -1,13 +1,33 @@
 .course-details-hero {
     background-color: #26292d;
     color: aliceblue;
-    height: 350px;
-    flex-flow: row nowrap;
+    height: 300px;
+    /* flex-flow: row nowrap; */
     width: 100%;
 }
 
-.course-details-hero h1,
-p {
-    padding: 10px;
+#root {
+    background-color: rgb(248, 249, 250);
+    height: 100%;
+}
+
+.courses-require {
+    height: auto;
+    padding-top: 70px;
+    margin-left: 30px;
+}
+
+.course-details-hero>h1 {
+    padding-top: 40px;
     padding-left: 100px;
+}
+
+.course-details-hero>p {
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.course-detail-page-rating {
+    margin-top: 100px;
+    margin-left: 100px;
 }

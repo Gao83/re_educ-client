@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { Link, } from 'react-router-dom'
 import CourseCard from "../../components/CourseCard/CourseCard"
 import Loader from "../../components/Loader/Loader"
+import './CoursesFilteredByCategory.css'
 
 
 
@@ -32,14 +33,13 @@ const CoursesFilteredByCategory = () => {
     return (
         categoryCourses
             ?
-            <Container>
+            <Container className="container-category-courses">
                 {
                     categoryCourses.map(category => {
                         return (
                             <Col>
                                 <>
                                     <CourseCard {...category} />
-                                    <hr />
                                 </>
                             </Col>
                         )

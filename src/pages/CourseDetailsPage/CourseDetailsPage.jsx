@@ -28,19 +28,20 @@ const CourseDetailsPage = () => {
         courseDetail
             ?
             <>
-                <Row>
-                    <Col md={{ span: 8 }}>
-
-                        <div className="course-details-hero">
-                            <h1>{title} </h1>
-                            <p>{headline} </p>
-                            <p>{avgRating}</p>
-                            <p>Creado por: {owner?.username} </p>
-                        </div>
-                        <Container>
+                <Col md={{ span: 3 }}>
+                    <CardOneCourse {...courseDetail} />
+                </Col>
+                <div className="course-details-hero">
+                    <h1>{title} </h1>
+                    <p>{headline} </p>
+                    <p>{avgRating}</p>
+                    <p>Creado por: {owner?.username} </p>
+                </div>
+                <Container>
+                    <Row>
+                        <Col md={{ span: 4 }}>
                             <Row>
-                                <Col md={{ span: 12 }}>
-
+                                <Col className="courses-require">
                                     <h4>Requisitos</h4>
                                     <ul>
                                         <li>
@@ -51,13 +52,14 @@ const CourseDetailsPage = () => {
                                     <p>{description} </p>
                                 </Col>
                             </Row>
-                        </Container>
-                    </Col>
-                    <Col md={{ span: 3 }}>
-                        <CardOneCourse {...courseDetail} />
-                    </Col>
-                </Row>
-                <Ratings course_id={course_id} />
+                        </Col>
+                    </Row>
+                </Container>
+                <Col className="course-detail-page-rating" md={{ span: 4 }}>
+                    <h1>Valoraciones</h1>
+                    <hr />
+                    <Ratings  course_id={course_id} />
+                </Col>
             </> :
             <Loader />
     )

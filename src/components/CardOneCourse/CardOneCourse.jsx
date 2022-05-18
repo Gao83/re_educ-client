@@ -16,7 +16,7 @@ const CardOneCourse = ({ _id, courseImg, price, duration }) => {
                 <h2>{price}€</h2>
                 <hr />
                 <Link to={`/cursos/${_id}/media`}>
-                    <Button>Comprar Curso</Button>
+                    <Button variant="dark">Comprar Curso</Button>
                 </Link>
                 <h6>Este curso ofrece</h6>
                 <ul>
