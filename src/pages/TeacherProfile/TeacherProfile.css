@@ -4,8 +4,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.container-teacher hr {
+    width: 43%;
+}
+
 .container-teacher h1 {
-    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .container-teacher h5 {
@@ -25,15 +30,23 @@
 }
 
 .username-box h1 {
-    font-size: 4em;
+    /* font-size: 1.6em; */
     line-height: 200px;
     padding-left: 60px;
     font-family: 'DM Serif Display', serif;
 }
 
 .img-box img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     object-fit: cover;
+}
+
+.img-box a{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 .btn-edit-profile {
@@ -41,8 +54,17 @@
 }
 
 .profile-courses-col {
-
     display: block;
     margin-top: 100px;
 
+}
+
+.teacher-profile-courses {
+    margin-top: 40px;
+}
+
+.teacher-profile-courses h1 {
+    /* font-size: 1.6em; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }

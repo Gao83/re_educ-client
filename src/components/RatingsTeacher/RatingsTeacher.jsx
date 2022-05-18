@@ -14,7 +14,7 @@ const RatingsTeachers = ({ id }) => {
 
     useEffect(() => loadRatingTeachers(), [])
 
- 
+
     const loadRatingTeachers = () => {
         ratingService
             .getTeacherComments(id)

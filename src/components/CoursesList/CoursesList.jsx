@@ -17,7 +17,7 @@ const CourseList = ({ courses }) => {
     return (
         courses
             ?
-            <Carousel breakPoints={breakpoints} >
+            <div breakPoints={breakpoints} >
                 {
                     courses.map(course => {
                         return (
@@ -30,7 +30,7 @@ const CourseList = ({ courses }) => {
                     })
                 }
 
-            </Carousel>
+            </div>
             :
             <Loader />
     )

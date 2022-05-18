@@ -38,8 +38,8 @@ const UserProfile = () => {
             {
                 userDetails ?
                     <>
-                        < div className="username-box" >
-                            <h1>Este es el perfil  de {username}</h1>
+                        < div id="username-box" >
+                            <h1>Este es el perfil de, {username}</h1>
                         </div >
                         <Container className="container-teacher">
                             <Row>
@@ -53,10 +53,12 @@ const UserProfile = () => {
                                     <p><strong>Sobre mí</strong></p>
                                     <p>{aboutMe}</p>
                                 </Col>
-                                <Col md={{ span: 6, offset: 1 }}>
-                                    <h1>Imagen de perfil</h1>
+                                <Col md={{ span: 6, offset: 1 }} className="img-box img ">
+                                    {/* <h1>Imagen de perfil</h1>
+                                    <hr></hr> */}
                                     <img src={profileImg}></img>
-                                    <hr></hr>
+                                    <br></br>
+                                    <br></br>
 
                                     <Link className="link-comments" onClick={openModal} to='#'>Valorar al instructor</Link>
                                     <Modal show={showModal} onHide={closeModal}>
@@ -73,7 +75,7 @@ const UserProfile = () => {
                     <Loader />
             }
 
-            <Col md={{ span: 6, offset: 3 }} >
+            <Col md={{ span: 6, offset: 3 }} className="teacher-profile-courses" >
                 <h1 >Mis Cursos</h1>
                 <hr></hr>
                 <CoursesByTeacher id={id} />

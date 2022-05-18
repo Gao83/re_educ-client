@@ -41,13 +41,13 @@ const CoursePage = () => {
         <>
             <div className="container-courses-page">
 
-                <h3>Los mejor valorados</h3>
+                <h4>Los mejor valorados</h4>
                 <CourseByRating coursesByRating={coursesByRating} />
 
-                <h3>Listado de cursos</h3>
+                <h4>Listado de cursos</h4>
                 <CourseList courses={courses} />
 
-                <h3>Listado de profesores/as</h3>
+                <h4>Listado de profesores/as</h4>
                 <TeacherList />
 
             </div>
