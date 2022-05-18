@@ -53,7 +53,9 @@ class CoursesService {
     getCoursesById = (id) => {
         return this.api.get(`/getCoursesById/${id}`)
     }
-
+    getCoursesPaidOut = () => {
+        return this.api.get(`/coursesCurrentUser`)
+    }
 }
 
 
