@@ -13,7 +13,6 @@ const CheckoutForm = ({ _id, price }) => {
     const elements = useElements()
     const [paymentResult, setpaymentResult] = useState('')
 
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 

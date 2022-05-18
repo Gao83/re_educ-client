@@ -4,29 +4,32 @@ import './StudentProfile.css'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
 import { Link } from 'react-router-dom'
-// import CourseListByUser from '../../components/CourseListByUser/CourseListByUser'
-
+import CourseListByUser from '../../components/CourseListByUser/CourseListByUser'
+import CoursesPaid from '../../components/CoursesPaid/CoursesPaid.jsx'
 const StudentProfile = () => {
 
     const { user } = useContext(AuthContext)
+
+
     const [userDetails, setUserDetails] = useState({})
+
 
     useEffect(() => {
 
         usersService
             .getOneUser(user?._id)
             .then(({ data }) => {
+                
                 setUserDetails(data)
             })
             .catch(err => console.log(err))
     }, [user?._id])
 
-    const { username, _id, interests, education, aboutMe, profileImg } = userDetails
-    // const firstLetter = username.charAt(0)
+    const { username, _id, interests, education, aboutMe, profileImg, role } = userDetails
 
     return (
 
-        user ?
+        userDetails ?
             <>
                 <div id="username-box">
                     {/* <div className="username-box-first-letter">
@@ -50,14 +53,23 @@ const StudentProfile = () => {
                             <Link to={`/perfil/editar/${_id}`}><Button className='btn btn-dark' id='btn-edit-profile' type="submit">Editar perfil</Button></Link>
                         </Col>
                     </Row>
-
                 </Container>
-                {/* <Col md={{ span: 6, offset: 3 }} >
+
+                <>
+                    {(role === 'TEACHER') && < Col md={{ span: 6, offset: 3 }} >
+                        <h1>Cursos creados por mí</h1>
+                        <hr />
+                        <CourseListByUser />
+                    </Col>}
+
+
+                    {(role === 'USER') && < Col md={{ span: 6, offset: 3 }} >
                         <h1>Mis Cursos</h1>
                         <hr></hr>
+                        <CoursesPaid />
+                    </Col>}
+                </>
 
-                        <CourseListByUser />
-                    </Col> */}
             </>
 
             :
