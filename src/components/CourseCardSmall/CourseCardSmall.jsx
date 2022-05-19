@@ -31,20 +31,6 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
     return (
 
         <div className="body-score-card">
-<<<<<<< HEAD
-            {/* <Link to={`/cursos/${_id}`} > */}
-            <Card>
-                <Card.Img variant="top" src={courseImg} />
-                <Card.Body className="card-body">
-                    <Card.Title><h5><strong>{title}</strong></h5></Card.Title>
-                    {/* {headline} */}
-                </Card.Body>
-            </Card >
-            <div className="card-price">
-                {price / 100}€
-            </div>
-            {/* </Link> */}
-=======
             <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
                 <Card>
                     <Card.Img variant="top" src={courseImg} />
@@ -63,8 +49,8 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
                     </Card.Body>
                 </Card >
             </Link>
->>>>>>> 080e83b094fd08ef9e5adc20dcb6d2ebc06c623b
         </div >
+
     )
 }
 export default CourseCardSmall
