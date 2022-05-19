@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Form, Button, Row, Col, Container, Modal } from "react-bootstrap"
 import './CheckoutForm.css'
 import paymentService from "../../services/payment.service";
+import { Link } from "react-router-dom";
 
 
 const CheckoutForm = ({ _id, price }) => {
@@ -58,19 +59,21 @@ const CheckoutForm = ({ _id, price }) => {
         }
     }
     return (
-
+        
         <Container>
-            <Row className="stripe">
-                <Form onSubmit={handleSubmit}>
+                <Link to= '/perfil'>
+                <Row className="stripe">
+                    <Form onSubmit={handleSubmit}>
 
-                    <CardElement />
-                    <Button type="submit" >
-                        Buy
-                    </Button>
-                </Form>
-            </Row>
+                        <CardElement />
+                        <Button type="submit" >
+                            Buy
+                        </Button>
+                    </Form>
+                </Row>
 
-        </Container>
+        </Link>
+            </Container>
 
     )
 }
