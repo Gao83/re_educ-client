@@ -61,7 +61,7 @@ const CheckoutForm = ({ _id, price }) => {
     return (
         
         <Container>
-                <Link to= '/perfil'>
+               
                 <Row className="stripe">
                     <Form onSubmit={handleSubmit}>
 
@@ -72,7 +72,7 @@ const CheckoutForm = ({ _id, price }) => {
                     </Form>
                 </Row>
 
-        </Link>
+    
             </Container>
 
     )

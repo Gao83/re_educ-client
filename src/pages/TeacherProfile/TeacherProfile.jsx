@@ -13,6 +13,9 @@ import CreateRatingTeacher from '../../components/CreateRatingTeacher/CreateRati
 const UserProfile = () => {
 
     const [userDetails, setUserDetails] = useState({})
+    const [update, setUpdate] = useState(false)
+
+
     const { id } = useParams()
 
     useEffect(() => {
@@ -65,7 +68,8 @@ const UserProfile = () => {
                                         <Modal.Body>
                                             <CreateRatingTeacher
                                                 id={id}
-                                                closeModal={closeModal} />
+                                                closeModal={closeModal}
+                                                setUpdate={setUpdate} />
                                         </Modal.Body>
                                     </Modal>
                                 </Col>
@@ -81,7 +85,7 @@ const UserProfile = () => {
                 <h1 >Mis Cursos</h1>
                 <hr></hr>
                 <CoursesByTeacher id={id} />
-                <RatingsTeachers id={id} />
+                <RatingsTeachers id={id} update={update} />
             </Col>
         </>
 
