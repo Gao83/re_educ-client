@@ -7,26 +7,17 @@ import TeacherList from "../../components/TeachersList/TeacherList"
 import './CoursesPage.css'
 
 const CoursePage = () => {
-    const [courses, setAllCourses] = useState([])
+
     const [coursesByRating, setCoursesByRating] = useState([])
 
+
+
     useEffect(() => {
-        allCourseTogether()
+        loadCoursesByRating()
     }, [])
 
-    const allCourseTogether = () => {
-        loadCourses()
-        loadCoursesByRating()
-    }
 
-    const loadCourses = () => {
-        courseService
-            .getAllCourses()
-            .then(({ data }) => {
-                setAllCourses(data)
-            })
-            .catch(err => console.log(err))
-    }
+
 
     const loadCoursesByRating = () => {
         courseService
@@ -45,7 +36,7 @@ const CoursePage = () => {
                 <CourseByRating coursesByRating={coursesByRating} />
 
                 <h3>Listado de cursos</h3>
-                <CourseList courses={courses} />
+                <CourseList />
 
                 <h3>Listado de profesores/as</h3>
                 <TeacherList />

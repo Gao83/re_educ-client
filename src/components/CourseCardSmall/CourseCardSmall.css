@@ -1,91 +1,66 @@
-/* .body-score-card {
-    width: 100%;
-    margin: auto;
-    height: 400px;
-    box-sizing: content-box; */
-/* border: .5px solid black; */
-/* background-color: white; */
-/* padding-right: 20px; */
-/* box-shadow: 2px 5px 12px 5px rgba(100, 100, 100, 0.34); */
-/* font-family: 'DM Serif Display',serif; */
-/* font-family: 'Montserrat', sans-serif;
-}
-
-.body-score-card h5 {
-    font-size: .8em;
-    text-align: left;
-}
-
-.body-score-card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card {
-    border: none !important;
-    margin-right: 20px;
-}
-
-.card-price {
-    text-align: left;
-    font-size: 1.5em;
-    padding-left: 20px;
-    margin-top: 30px;
-}
-
-.score-card-small {
-    display: flex;
-    justify-content: space-between;
-    text-overflow: ellipsis;
-}
-
-.score-card-small p {
-    text-align: left; */
-/* margin: 5px, 2px; */
-/* 
-}
-
-.overflow-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.stars {
-    color: #f1c44d;
-    align-items: flex-end;
-
-} */
-
 .body-score-card {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     margin: auto;
-    padding-right: 40px;
-    font-family: 'Montserrat', sans-serif;
+    /* padding-right: 20px; */
+    font-family: 'Roboto Flex', sans-serif;
+    padding-right: 5px;
+    font-weight: 500;
 }
 
 .body-score-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
 }
 
-.score-card-small {
-    display: flex;
-    justify-content: space-between;
+.card-small-img {
+    width: 250px;
+    height: 150px;
+}
 
+.card-small-title {
+    width: 250px;
+    height: 50px;
+    font-size: 1.1em;
+    padding: 0 5px;
+}
+
+.card-small-headline {
+    width: 250px;
+    color:#8d8d8d;
+    margin-top:20px;
+    height: 60px;
+    font-weight:400;
+    font-size: .85em;
+    padding:0 5px;
 }
 
 .score-card-small p {
     text-align: left;
-    margin: 5px, 2px;
-
+    padding-top: 10px;
+}
+.price{
+    color: black;
+    text-align: right;
+    padding: 0 5px;
+}
+.card-small-price {
+    font-size: 1.3em;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 500;
+    padding: 0 5px;
 }
 
-.stars {
+.card-small-price p {
+    color: black;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+.star {
     color: #f1c44d;
-    align-items: flex-start;
+    padding: 0 5px;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .rec-carousel button {
@@ -112,12 +87,11 @@
 
 .btn-card-small {
     color: white;
+    width: 10%;
     background-color: rgb(40, 40, 40);
     text-decoration: none;
     border: 0px solid black;
     border-radius: 5px;
-    padding: 10px;
-    margin-left: 40px;
 }
 
 .btn-card-small:hover {

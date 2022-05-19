@@ -7,11 +7,12 @@ import ratingService from '../../services/rating.service'
 
 
 
-const RatingsTeachers = ({ id, closemodal }) => {
+const RatingsTeachers = ({ id, update }) => {
     const [teacherRatings, setTeacherRatings] = useState([])
 
 
-    useEffect(() => loadRatingTeachers(), [])
+
+    useEffect(() => loadRatingTeachers(), [update])
 
     const loadRatingTeachers = () => {
         ratingService

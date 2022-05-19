@@ -2,3 +2,32 @@ p {
     /* font-family: 'DM Serif Display',serif; */
     font-family: 'Montserrat', sans-serif;
 }
+
+.box-home{
+    height: 600px;
+    background-color: rgb(252, 252, 255);
+}
+
+.div-home {
+    background-color: black;
+    height:30px;
+}
+
+.col-box-home {
+    height: 600px;
+}
+
+.col-box-home img {
+    margin: auto;
+    height: 500px;
+    object-fit: cover;
+}
+
+.col-box-home-2 {
+    height: 400px;
+}
+
+.col-box-home-2 img {
+    width:100%;
+    margin-top:40px;
+}
