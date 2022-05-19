@@ -145,7 +145,7 @@ const CoursesForm = () => {
                             </Form.Select>
                         </Form.Group>
                     </Row>
-                    <Button id="btn-form" variant="dark" type="submit" disabled={loadingImage || loadingVideo}>{loadingImage || loadingVideo ? 'Cargando...' : 'Crear nuevo curso'} </Button>
+                    <Button id="btn-payment" variant="dark" type="submit" disabled={loadingImage || loadingVideo}>{loadingImage || loadingVideo ? 'Cargando...' : 'Crear nuevo curso'} </Button>
                 </Form>
             </div>
         </Container>

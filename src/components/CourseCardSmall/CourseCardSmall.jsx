@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 
 const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) => {
 
-
+    const realPrice = price / 100
+    
     let result = Math.round(avgRating)
 
     const starts = (result) => {
@@ -31,24 +32,24 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
     return (
 
         <div className="body-score-card">
-            {/* <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}> */}
-            <Card>
-                <Card.Img variant="top" src={courseImg} />
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    {/* {headline} */}
-                    <div>
-                        <div className="score-card-small ">
-                            <p className="star">{avgRating}&nbsp; &nbsp; {starts(result)}</p>
-                        </div>
+            <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
+                <Card>
+                    <Card.Img variant="top" src={courseImg} />
+                    <Card.Body>
+                        <Card.Title>{title}</Card.Title>
+                        {headline}
                         <div>
-                            {price}€
-                            {/* <Link to="/" className="btn-card-small">Añadir a la cesta</Link> */}
+                            <div className="score-card-small ">
+                                <p className="star">{avgRating}&nbsp; &nbsp; {starts(result)}</p>
+                            </div>
+                            <div>
+                                {realPrice}€
+                                {/* <Link to="/" className="btn-card-small">Añadir a la cesta</Link> */}
+                            </div>
                         </div>
-                    </div>
-                </Card.Body>
-            </Card >
-            {/* </Link> */}
+                    </Card.Body>
+                </Card >
+            </Link>
         </div >
 
     )

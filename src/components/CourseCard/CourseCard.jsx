@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 
 const CourseCard = ({ _id, title, courseImg, headline, price, courses, avgRating }) => {
 
+    const realPrice = price/100
     return (
 
         <div className="course-card-container">
@@ -23,7 +24,7 @@ const CourseCard = ({ _id, title, courseImg, headline, price, courses, avgRating
                                     <Card.Title>{title}</Card.Title>
                                 </Col>
                                 <Col md={{ span: 6 }} className="d-flex justify-content-end">
-                                    <Card.Title>{price}€</Card.Title>
+                                    <Card.Title>{realPrice}€</Card.Title>
                                 </Col>
                             </Row>
                             <Card.Text>{headline}</Card.Text>

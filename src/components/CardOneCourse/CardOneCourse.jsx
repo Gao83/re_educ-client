@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 
 const CardOneCourse = ({ _id, courseImg, price, duration }) => {
 
-
-
+const realPrice = price/100
+    
     return (
 
         <div className="cardText" >
 
             <img src={courseImg} alt="imagen de curso" />
             <div className="bodyCard">
-                <h2>{price/100}€</h2>
+                <h2>{realPrice}€</h2>
                 <hr />
                 <Link to={`/${_id}/stripe`}>
                     <Button className="btn-dark" id="btn-buy">Comprar Curso</Button>
