@@ -24,7 +24,34 @@ const HomePage = () => {
                 </Container>
             </div>
             <div className="div-home"></div>
+
             <CarouselCoursesHome />
+
+            <div className="div-home"></div>
+            <div className="home-second-box" >
+                <Col md={{ span: 6 }} className="home-second-box-col">
+                    <img src="./../img/brain_2.png"></img>
+                </Col>
+                <Col md={{ span: 6 }} className="home-second-box-col-2">
+                    <img src="./../img/entrena1.png"></img>
+                </Col>
+
+                <Col md={{ span: 6 }} className="home-second-box-col-2">
+                    <img src="./../img/entrena2.png"></img>
+                </Col>
+                <Col md={{ span: 6 }} className="home-second-box-col">
+                    <img src="./../img/brain_1.png"></img>
+                </Col>
+
+                <Col md={{ span: 6 }} className="home-second-box-col">
+                    <img src="./../img/brain3.png"></img>
+                </Col>
+                <Col md={{ span: 6 }} className="home-second-box-col-2">
+                    <img src="./../img/entrena3.png"></img>
+                </Col>
+
+
+            </div>
             <div className="div-home"></div>
 
         </>

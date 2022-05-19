@@ -24,7 +24,7 @@ const CourseDetailsPage = () => {
             .catch(err => console.log(err))
     }
 
-    const { title, owner, requirements, description, content, headline, avgRating } = courseDetail
+    const { title, owner, requirements, description, content, headline, avgRating, _id } = courseDetail
     // const { text } = courseDetail.content
 
     return (
@@ -39,7 +39,9 @@ const CourseDetailsPage = () => {
                     <h1>{title} </h1>
                     <p>{headline} </p>
                     <p>{avgRating}</p>
-                    <p>Creado por: {owner?.username} </p>
+                    <Link to={`/perfil/${_id}`}>
+                        <p>Creado por: {owner?.username} </p>
+                    </Link>
                 </div>
                 <Container>
                     <Row>

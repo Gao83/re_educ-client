@@ -3,14 +3,14 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-.box-home{
+.box-home {
     height: 600px;
     background-color: rgb(252, 252, 255);
 }
 
 .div-home {
     background-color: black;
-    height:30px;
+    height: 30px;
 }
 
 .col-box-home {
@@ -28,6 +28,60 @@ p {
 }
 
 .col-box-home-2 img {
-    width:100%;
-    margin-top:40px;
+    width: 100%;
+    margin-top: 40px;
 }
+
+.home-second-box {
+    height: auto;
+    width:80%;
+    margin:auto;
+}
+
+.home-second-box-col {
+    width: 50%;
+    height: 400px;
+    float: left;
+    /* background-color: aquamarine; */
+}
+
+.home-second-box-col img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 150px;
+    margin-top: 80px;
+
+}
+
+.home-second-box-col-2 img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    /* margin-left: 150px; */
+    margin-top: 80px;
+    padding-bottom: 50px;
+
+}
+
+.home-second-box-col-2 {
+    /* width: 20%; */
+    height: 400px;
+    float: left;
+    /* background-color: blue; */
+}
+
+.home-second-box-col-2>h3 {
+    font-family: 'DM Serif Display',serif;
+    font-size:3em;
+    text-align:center;
+    line-height: 400px;
+    padding:0 20px;
+}
+
+.div-col-2 {
+    width:40%;
+    background-color: black;
+    height: 30px;
+}
+

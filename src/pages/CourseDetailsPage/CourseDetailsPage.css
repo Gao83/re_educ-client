@@ -23,6 +23,16 @@
     padding-left: 100px;
 }
 
+.course-details-hero>a {
+    text-decoration:none;
+    color: white;
+    display: block;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+
+
 .course-detail-page-rating {
     margin-top: 100px;
     margin-left: 100px;

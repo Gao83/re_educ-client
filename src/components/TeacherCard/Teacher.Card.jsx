@@ -8,16 +8,16 @@ const TeacherCard = ({ username, profileImg, _id }) => {
 
     return (
 
-        // <Link to={`/perfil/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
-        <div className="teacher-card-container">
-            <div className="teacher-card-img" >
-                <img src={profileImg}></img>
-                <div clasName="teacher-card-p">
-                    <p>{username}</p>
+        <Link to={`/perfil/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
+            <div className="teacher-card-container">
+                <div className="teacher-card-img" >
+                    <img src={profileImg}></img>
+                    <div clasName="teacher-card-p">
+                        <p>{username}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        // </Link>
+        </Link>
 
     )
 }

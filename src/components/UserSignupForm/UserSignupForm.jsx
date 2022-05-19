@@ -57,7 +57,7 @@ const UserSignupForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Contraseña</Form.Label>
-                    <Form.Control className="input-signup-form" type="text" value={password} onChange={handleInputChange} name="password" />
+                    <Form.Control className="input-signup-form" type="password" value={password} onChange={handleInputChange} name="password" />
                 </Form.Group>
                 <Form.Select aria-label="Default select example" value={role} onChange={handleInputChange} name='role' >
                     <option value="USER">Estudiante</option>
