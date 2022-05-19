@@ -25,7 +25,7 @@ const CourseByRating = ({ coursesByRating }) => {
 
                             return (
                                 <Link to={`/cursos/${eachCourse._id}`} style={{ textDecoration: 'none', color: "black" }}>
-                                    <CourseCardSmall key={eachCourse?._id} {...eachCourse} />
+                                    <CourseCardSmall key={eachCourse._id} {...eachCourse} />
                                 </Link>
                             )
 

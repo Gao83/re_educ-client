@@ -1,3 +1,31 @@
 .courses-list-container {
-    margin-bottom:20px;
+    margin-bottom: 20px;
+}
+
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(118, 118, 118);
+    color: rgb(118, 118, 118);
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: antiquewhite;
+    background-color: rgb(118, 118, 118);
+}
+
+.paginationActive a {
+    color: antiquewhite;
+    background-color: rgb(118, 118, 118);
+
 }
