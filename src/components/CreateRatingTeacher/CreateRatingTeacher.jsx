@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa"
 import { Button, Container, Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
-const CreateRatingTeacher = ({ id }) => {
+const CreateRatingTeacher = ({ id, closeModal }) => {
 
 
     const [ratingTeacherData, setRatingTeacherData] = useState({
@@ -70,7 +70,7 @@ const CreateRatingTeacher = ({ id }) => {
                         <Form.Label>Deja tu comentario</Form.Label>
                         <Form.Control as="textarea" value={content} name='content' onChange={handleInputChange} rows={3} />
                     </Form.Group>
-                    <Button variant="dark" type="submit" >Dejar Comentario </Button>
+                    <Button variant="dark" type="submit" onClick={closeModal} >Dejar Comentario </Button>
                 </Form>
             </Container>
         </>

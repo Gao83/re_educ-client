@@ -14,9 +14,7 @@ const EditStudentPage = () => {
                     <h1>Completa tu perfil</h1>
                     <hr />
                     <UserSignupDetailsForm id={id} />
-                </Col>
-
-                
+                </Col>    
             </Container>
         </>
     )

@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
-import './StudentProfile.css'
+import './Profile.css'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ const StudentProfile = () => {
         usersService
             .getOneUser(user?._id)
             .then(({ data }) => {
-                
+
                 setUserDetails(data)
             })
             .catch(err => console.log(err))
@@ -66,7 +66,7 @@ const StudentProfile = () => {
                     {(role === 'USER') && < Col md={{ span: 6, offset: 3 }} >
                         <h1>Mis Cursos</h1>
                         <hr></hr>
-                        <CoursesPaid />
+                        <CoursesPaid  />
                     </Col>}
                 </>
 

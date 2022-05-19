@@ -1,14 +1,14 @@
-.body-score-card {
+/* .body-score-card {
     width: 100%;
     margin: auto;
     height: 400px;
-    box-sizing: content-box;
-    /* border: .5px solid black; */
-    background-color: white;
-    /* padding-right: 20px; */
-    /* box-shadow: 2px 5px 12px 5px rgba(100, 100, 100, 0.34); */
-    /* font-family: 'DM Serif Display',serif; */
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: content-box; */
+/* border: .5px solid black; */
+/* background-color: white; */
+/* padding-right: 20px; */
+/* box-shadow: 2px 5px 12px 5px rgba(100, 100, 100, 0.34); */
+/* font-family: 'DM Serif Display',serif; */
+/* font-family: 'Montserrat', sans-serif;
 }
 
 .body-score-card h5 {
@@ -40,9 +40,9 @@
 }
 
 .score-card-small p {
-    text-align: left;
-    /* margin: 5px, 2px; */
-
+    text-align: left; */
+/* margin: 5px, 2px; */
+/* 
 }
 
 .overflow-ellipsis {
@@ -55,4 +55,72 @@
     color: #f1c44d;
     align-items: flex-end;
 
+} */
+
+.body-score-card {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-right: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.body-score-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.score-card-small {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.score-card-small p {
+    text-align: left;
+    margin: 5px, 2px;
+
+}
+
+.stars {
+    color: #f1c44d;
+    align-items: flex-start;
+}
+
+.rec-carousel button {
+    background-color: white;
+}
+
+.eWjCzc:hover:enabled,
+.eWjCzc:focus:enabled {
+    color: #212529;
+    /* background-color: rgba(103,58,183,1); */
+    box-shadow: 0 0 2px 0 #333;
+}
+
+.eWjCzc:hover:enabled,
+.eWjCzc:focus:enabled {
+    color: black;
+    /* background-color: rgba(103,58,183,1); */
+    box-shadow: 0 0 2px 0 #333;
+}
+
+.rec-dot {
+    display: none;
+}
+
+.btn-card-small {
+    color: white;
+    background-color: rgb(40, 40, 40);
+    text-decoration: none;
+    border: 0px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 40px;
+}
+
+.btn-card-small:hover {
+    background-color: rgb(219, 219, 219);
+    color: black;
 }
