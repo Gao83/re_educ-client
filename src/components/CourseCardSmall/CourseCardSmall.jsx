@@ -50,6 +50,7 @@ const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) 
             </Card >
             {/* </Link> */}
         </div >
+
     )
 }
 export default CourseCardSmall
