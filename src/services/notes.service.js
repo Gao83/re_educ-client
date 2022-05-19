@@ -22,6 +22,9 @@ class NotesService {
     getMyNotesByCourse = (course_id) => {
         return this.api.get(`/${course_id}/getMyNotesByCourse`)
     }
+    deleteOneNote = (note_id) => {
+        return this.api.put(`/${note_id}/delete`)
+    }
 
 
 }
