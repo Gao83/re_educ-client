@@ -1,0 +1,23 @@
+.teacher-card-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.teacher-card-container {
+    /* width: 400px; */
+    height: 200px;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.teacher-card-container p{
+    text-align: center;
+    line-height: 200px;
+    margin-left: 40px;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1.5em;
+
+
+}
