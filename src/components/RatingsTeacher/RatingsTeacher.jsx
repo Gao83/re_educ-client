@@ -11,13 +11,12 @@ const RatingsTeachers = ({ id, closemodal }) => {
     const [teacherRatings, setTeacherRatings] = useState([])
 
 
-    useEffect(() => loadRatingTeachers(), [{}])
+    useEffect(() => loadRatingTeachers(), [])
 
     const loadRatingTeachers = () => {
         ratingService
             .getTeacherComments(id)
             .then(({ data }) => {
-
                 setTeacherRatings(data)
             })
             .catch(err => console.log(err))
