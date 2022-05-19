@@ -1,9 +1,11 @@
-import { Col, Container } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import CourseCard from "../CourseCard/CourseCard"
 import TeacherCard from "../TeacherCard/Teacher.Card"
 import Loader from "../Loader/Loader"
 import { useEffect, useState } from "react"
 import usersService from "../../services/users.service"
+import Carousel from "react-elastic-carousel";
+
 
 const TeacherList = () => {
 
@@ -23,20 +25,16 @@ const TeacherList = () => {
     return (
         teachers
             ?
-            <Container>
+            <Carousel>
                 {
                     teachers.map(teacher => {
                         return (
-
-
-                            <TeacherCard key={teacher?._id} {...teacher} />
-
-
+                                <TeacherCard key={teacher?._id} {...teacher} />
                         )
                     })
                 }
 
-            </Container>
+            </Carousel>
             :
             <Loader />
     )
