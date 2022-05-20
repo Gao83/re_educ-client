@@ -29,7 +29,6 @@ const UserProfile = () => {
             .catch(err => console.log(err))
     }, [])
 
-
     const { username, interests, education, aboutMe, profileImg } = userDetails
 
     const [showModal, setShowModal] = useState(false)
@@ -42,7 +41,7 @@ const UserProfile = () => {
                 userDetails ?
                     <>
                         < div id="username-box" >
-                            <h1>Este es el perfil de, {username}</h1>
+                            <h1>Este es el perfil de, {!username}</h1>
                         </div >
                         <Container className="container-teacher">
                             <Row>

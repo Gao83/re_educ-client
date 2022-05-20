@@ -5,6 +5,9 @@
 .paginationBttns {
     width: 80%;
     height: 40px;
+    margin:auto;
+    margin-top:50px;
+    margin-bottom:100px;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -14,18 +17,21 @@
     padding: 10px;
     margin: 8px;
     border-radius: 5px;
-    border: 1px solid rgb(118, 118, 118);
-    color: rgb(118, 118, 118);
+    color: rgb(73, 73, 73);
+    text-decoration:none;
+    border: none;
     cursor: pointer;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .paginationBttns a:hover {
     color: antiquewhite;
-    background-color: rgb(118, 118, 118);
+    background-color: rgb(185, 185, 185);
 }
 
 .paginationActive a {
     color: antiquewhite;
-    background-color: rgb(118, 118, 118);
+    background-color: rgb(255, 165, 39);
+    font-family: 'Roboto Flex', sans-serif;
 
 }

@@ -10,8 +10,6 @@ import ratingService from '../../services/rating.service'
 const RatingsTeachers = ({ id, update }) => {
     const [teacherRatings, setTeacherRatings] = useState([])
 
-
-
     useEffect(() => loadRatingTeachers(), [update])
 
     const loadRatingTeachers = () => {
