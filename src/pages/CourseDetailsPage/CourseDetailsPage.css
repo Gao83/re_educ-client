@@ -24,20 +24,30 @@
 }
 
 .course-details-hero>a {
-    text-decoration:none;
+    text-decoration: none;
     color: white;
     display: block;
     padding-top: 10px;
     padding-left: 100px;
 }
-
-
-
 .course-detail-page-rating {
     margin-top: 100px;
     margin-left: 100px;
 }
 
-.btn-read-more{
+.btn-read-more {
     margin-top: 20px;
+}
+
+.score-detail-page p {
+    padding-top: 10px;
+    margin-left: 100px;
+}
+
+.star-detal-course {
+    color: #f1c44d;
+    padding: 0 5px;
+    font-size: 1.8em;
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 700;
 }

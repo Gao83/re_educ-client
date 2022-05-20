@@ -7,12 +7,12 @@ import ratingService from '../../services/rating.service'
 
 
 
-const RatingsTeachers = ({ id, update }) => {
-    const [teacherRatings, setTeacherRatings] = useState([])
+const RatingsTeachers = ({ id, setUpdate, update }) => {
+    const [teacherRatings, setTeacherRatings] = useState()
 
-
-
-    useEffect(() => loadRatingTeachers(), [update])
+    useEffect(() => {
+        loadRatingTeachers()
+    }, [update])
 
     const loadRatingTeachers = () => {
         ratingService
@@ -22,6 +22,7 @@ const RatingsTeachers = ({ id, update }) => {
             })
             .catch(err => console.log(err))
     }
+
     return (
         teacherRatings ?
             <>

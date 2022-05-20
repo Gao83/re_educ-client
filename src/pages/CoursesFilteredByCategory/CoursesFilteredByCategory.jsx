@@ -36,6 +36,7 @@ const CoursesFilteredByCategory = () => {
             <Container className="container-category-courses">
                 {
                     categoryCourses.map(category => {
+                        console.log(category.av)
                         return (
                             <Col>
                                 <>

@@ -9,6 +9,11 @@ import "./CourseDetailsPage.css"
 
 const CourseDetailsPage = () => {
 
+
+
+
+
+
     const [courseDetail, setcourseDetails] = useState({})
     const [showMore, setShowMore] = useState(false);
 
@@ -27,6 +32,32 @@ const CourseDetailsPage = () => {
     const { title, owner, requirements, description, content, headline, avgRating, _id } = courseDetail
     // const { text } = courseDetail.content
 
+
+
+
+    let result = Math.round(avgRating)
+
+    const starts = (result) => {
+        switch (result) {
+            case 1:
+                return '★'
+                break
+            case 2:
+                return '★★'
+                break
+            case 3:
+                return '★★★'
+                break
+            case 4:
+                return '★★★★'
+                break
+            case 5:
+                return '★★★★★'
+                break
+        }
+
+    }
+
     return (
 
         courseDetail
@@ -38,8 +69,10 @@ const CourseDetailsPage = () => {
                 <div className="course-details-hero">
                     <h1>{title} </h1>
                     <p>{headline} </p>
-                    <p>{avgRating}</p>
-                    <Link to={`/perfil/${_id}`}>
+                    <div className="score-detail-page  ">
+                        <p className="star-detal-course ">{avgRating}&nbsp; &nbsp;{starts(result)}</p>
+                    </div>
+                    <Link to={`/perfil/${owner?._id}`}>
                         <p>Creado por: {owner?.username} </p>
                     </Link>
                 </div>

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 //REGISTER IN DB. OK NEED TO IMPLEMENT CLOSEMODAL LATER
 
-const UserSignupForm = () => {
+const UserSignupForm = ({ closeModal}) => {
 
     const [signupForm, setSignupForm] = useState({
         username: '',
@@ -35,8 +35,8 @@ const UserSignupForm = () => {
             .signup(signupForm)
             .then(({ data }) => {
                 setSignupForm(data)
-                // closeModal()
-                navigate('/')
+             
+                //navigate('/')
             })
             .catch(err => console.log(err))
     }
@@ -53,7 +53,7 @@ const UserSignupForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email </Form.Label>
-                    <Form.Control className="input-signup-form" type="text" value={email} onChange={handleInputChange} name="email" />
+                    <Form.Control className="input-signup-form" type="email" value={email} onChange={handleInputChange} name="email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="password">
                     <Form.Label>Contraseña</Form.Label>
@@ -64,7 +64,7 @@ const UserSignupForm = () => {
                     <option value="TEACHER">Profesional</option>
                 </Form.Select>
                 <div>
-                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }} >Registrar</Button>
+                    <Button onClick={closeModal} className='btn btn-dark' type="submit" style={{ width: '100%' }} >Registrar</Button>
                 </div>
             </Form>
         </Container>

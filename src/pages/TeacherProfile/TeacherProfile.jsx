@@ -24,17 +24,17 @@ const UserProfile = () => {
             .getOneUser(id)
             .then(({ data }) => {
                 setUserDetails(data)
-
             })
             .catch(err => console.log(err))
     }, [])
 
 
-    const { username, interests, education, aboutMe, profileImg } = userDetails
+    const { username, interests, education, aboutMe, profileImg, avgRating } = userDetails
 
     const [showModal, setShowModal] = useState(false)
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
+
 
     return (
         <>
@@ -69,7 +69,8 @@ const UserProfile = () => {
                                             <CreateRatingTeacher
                                                 id={id}
                                                 closeModal={closeModal}
-                                                setUpdate={setUpdate} />
+                                                setUpdate={setUpdate}
+                                                update={update} />
                                         </Modal.Body>
                                     </Modal>
                                 </Col>
@@ -85,7 +86,10 @@ const UserProfile = () => {
                 <h1 >Mis Cursos</h1>
                 <hr></hr>
                 <CoursesByTeacher id={id} />
-                <RatingsTeachers id={id} update={update} />
+                <RatingsTeachers id={id}
+                    setUpdate={setUpdate}
+                    update={update}
+                />
             </Col>
         </>
 

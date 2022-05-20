@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 
 const CardOneCourse = ({ _id, courseImg, price, duration }) => {
 
+
+    
+
 const realPrice = price/100
     
     return (

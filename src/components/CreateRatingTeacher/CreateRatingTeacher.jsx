@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa"
 import { Button, Container, Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
-const CreateRatingTeacher = ({ id, closeModal, setUpdate }) => {
+const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
 
 
     const [ratingTeacherData, setRatingTeacherData] = useState({
@@ -35,7 +35,7 @@ const CreateRatingTeacher = ({ id, closeModal, setUpdate }) => {
             .createTeacherComment(id, ratingTeacherData)
             .then(({ data }) => {
                 setRatingTeacherData(data)
-                navigate(`/perfil/${id}`)
+                // navigate(`/perfil/${id}`)
             })
             .catch(err => console.log(err))
 
@@ -43,7 +43,7 @@ const CreateRatingTeacher = ({ id, closeModal, setUpdate }) => {
 
     const buttonActions = () => {
         closeModal()
-        setUpdate(true)
+        setUpdate(!update)
     }
     const arrRating = [1, 2, 3, 4, 5]
     return (

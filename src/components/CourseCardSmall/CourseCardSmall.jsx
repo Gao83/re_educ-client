@@ -1,6 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap"
 import "./CourseCardSmall.css"
-import { Link } from 'react-router-dom'
 
 
 const CourseCardSmall = ({ _id, title, courseImg, headline, price, avgRating }) => {
