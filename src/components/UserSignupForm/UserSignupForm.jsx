@@ -7,7 +7,11 @@ import { useNavigate } from 'react-router-dom'
 
 //REGISTER IN DB. OK NEED TO IMPLEMENT CLOSEMODAL LATER
 
+<<<<<<< HEAD
 const UserSignupForm = ({ closeModal}) => {
+=======
+const UserSignupForm = ({closeModal}) => {
+>>>>>>> ed38161100226e2c21d9248e981f39d5ee5df2e7
 
     const [signupForm, setSignupForm] = useState({
         username: '',

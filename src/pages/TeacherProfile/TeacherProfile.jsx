@@ -42,7 +42,7 @@ const UserProfile = () => {
                 userDetails ?
                     <>
                         < div id="username-box" >
-                            <h1>Este es el perfil de, {username}</h1>
+                            <h1>Este es el perfil de, {!username}</h1>
                         </div >
                         <Container className="container-teacher">
                             <Row>

@@ -1,7 +1,7 @@
 .me-auto.navbar-nav a {
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size:.9em;
+    font-size: .9em;
     font-weight: 300;
     padding: 10px;
     /* padding-left: 20px; */
@@ -12,6 +12,18 @@
     /* background-color: rgb(128, 128, 128); */
     border: 0.5px solid black;
     background-color: #212429;
+    animation-name: transition;
+    animation-duration: 2s;
+}
+
+@keyframes transition {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
 }
 
 #responsive-navbar-nav a {

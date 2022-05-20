@@ -49,7 +49,6 @@ const CourseList = () => {
                         return (
                             <Col key={course._id}>
                                 <>
-
                                     <CourseCard {...course} />
                                 </>
                             </Col>
