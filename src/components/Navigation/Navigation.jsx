@@ -22,7 +22,7 @@ const Navigation = () => {
 
     return (
         <>
-            <Navbar bg="light" variant="light" expand="lg">
+            <Navbar bg="light" variant="light" expand="lg" className="navbar">
                 <Container>
                     <Navbar.Brand href="/"><img className="logo-navbar" src="./../../img/re_educ_logo_2.png" alt="logo" /></Navbar.Brand>
                     <SearchBar />
@@ -60,8 +60,7 @@ const Navigation = () => {
                                             <UserLoginForm />
                                         </Modal.Body >
                                         </Modal>
-                                        
-                          
+                        
                                 </>
                         }
 

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 //REGISTER IN DB. OK NEED TO IMPLEMENT CLOSEMODAL LATER
 
-const UserSignupForm = () => {
+const UserSignupForm = ({closeModal}) => {
 
     const [signupForm, setSignupForm] = useState({
         username: '',
@@ -64,7 +64,7 @@ const UserSignupForm = () => {
                     <option value="TEACHER">Profesional</option>
                 </Form.Select>
                 <div>
-                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }} >Registrar</Button>
+                    <Button className='btn btn-dark' type="submit" style={{ width: '100%' }} closeModal={closeModal} >Registrar</Button>
                 </div>
             </Form>
         </Container>

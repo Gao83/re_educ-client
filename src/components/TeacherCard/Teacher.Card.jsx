@@ -15,18 +15,14 @@ const TeacherCard = ({ username, profileImg, _id, interests }) => {
                     <div className="teacher-card-img" >
                         <img src={profileImg}></img>
                         <div clasName="teacher-card-p">
-                            <p>{username}</p>
+                            <span id="username-teacher-card"><p>{username}</p></span>
                             <p>{interests}</p>
+                            <div className="container-courses-page-teacher"></div>
                         </div>
                     </div>
                     <div>
-
                     </div>
-
                 </div>
-
-
-
 
             </Link>
         </>

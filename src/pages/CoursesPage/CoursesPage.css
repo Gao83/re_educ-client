@@ -1,10 +1,20 @@
 .container-courses-page h3 {
-    font-family: 'Roboto Flex', sans-serif;
+    /* font-family: 'Roboto Flex', sans-serif; */
+    font-family: 'DM Serif Display',serif;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 2em;
     margin-top: 60px;
     margin-left: 100px;
     margin-bottom: 30px;
+}
+
+.container-courses-page-h3{
+    background-color: rgb(255, 165, 39);
+    width: 40%;
+    height:10px;
+    position: relative;
+    top:-30px;
+    margin-left:20px;
 }
 
 .container-courses-page.container {

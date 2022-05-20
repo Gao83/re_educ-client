@@ -39,7 +39,7 @@ const CourseDetailsPage = () => {
                     <h1>{title} </h1>
                     <p>{headline} </p>
                     <p>{avgRating}</p>
-                    <Link to={`/perfil/${_id}`}>
+                    <Link to={`/perfil/${owner?._id}`}>
                         <p>Creado por: {owner?.username} </p>
                     </Link>
                 </div>

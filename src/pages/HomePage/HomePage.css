@@ -6,6 +6,17 @@ p {
 .box-home {
     height: 600px;
     background-color: rgb(252, 252, 255);
+    animation-name:transition;
+    animation-duration: 1.5s;
+}
+
+@keyframes transition{
+    0%{
+        opacity:0
+    }
+    100%{
+        opacity:1
+    }
 }
 
 .div-home {
