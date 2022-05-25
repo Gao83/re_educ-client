@@ -53,23 +53,9 @@ const Navigation = () => {
                                                 <UserSignupForm closeModal={closeModal} />
                                             </Modal.Body>
                                         </Modal>
-<<<<<<< HEAD
-
-                                        <Link to="#" className="nav-link" onClick={openModal}>Iniciar sesión</Link>
-                                        <Modal show={showModal} onHide={closeModal} >
-                                            <Modal.Body >
-                                                <UserLoginForm />
-                                            </Modal.Body >
-                                        </Modal>
-
-
-                                    </>
-                            }
-=======
                         
                                 </>
                         }
->>>>>>> ed38161100226e2c21d9248e981f39d5ee5df2e7
 
                         </Nav>
                     </Navbar.Collapse>
