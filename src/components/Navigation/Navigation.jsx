@@ -13,10 +13,11 @@ const Navigation = () => {
     const [showSignupModal, setShowSignupModal] = useState(false)
 
     const openModal = () => setShowModal(true)
-    const openSignupModal = () => setShowSignupModal(true)
-
     const closeModal = () => setShowModal(false)
+    
+    const openSignupModal = () => setShowSignupModal(true)
     const closeSignupModal = () => setShowSignupModal(false)
+    
 
     const { user, logOutUser, isLoggedIn } = useContext(AuthContext)
 
@@ -50,7 +51,7 @@ const Navigation = () => {
                                         <Link to="#" className="nav-link" onClick={openSignupModal}>Registro</Link>
                                         <Modal show={showSignupModal} onHide={closeSignupModal}>
                                             <Modal.Body>
-                                                <UserSignupForm closeModal={closeModal} />
+                                                <UserSignupForm  />
                                             </Modal.Body>
                                         </Modal>
 
