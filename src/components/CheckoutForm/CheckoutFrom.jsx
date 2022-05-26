@@ -6,7 +6,8 @@ import { Form, Button, Row, Col, Container, Modal } from "react-bootstrap"
 import './CheckoutForm.css'
 import paymentService from "../../services/payment.service";
 import { useNavigate } from "react-router-dom";
-import CardOneCourse from "../CardOneCourse/CardOneCourse";
+import stripeService from "../../services/stripe.service";
+
 
 
 const CheckoutForm = ({ _id, price }) => {
@@ -14,7 +15,7 @@ const CheckoutForm = ({ _id, price }) => {
     const stripe = useStripe()
     const elements = useElements()
     const [paymentResult, setpaymentResult] = useState('')
-
+    console.log(price)
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -32,12 +33,12 @@ const CheckoutForm = ({ _id, price }) => {
 
             try {
                 const { id } = paymentMethod;
-                const response = await axios.post(
-                    `http://localhost:3001/stripe/charge`,
+                const response = await stripeService.checkout(
                     {
-                        amount: price,
                         id: id,
+                        amount: price,
                     }
+
                 );
 
                 console.log("Stripe 35 | data", response.data.success);
@@ -70,7 +71,7 @@ const CheckoutForm = ({ _id, price }) => {
                 <Form onSubmit={handleSubmit}>
                     <Row>
 
-                        <Col md={{ span: 5, offset: 1}}>
+                        <Col md={{ span: 5, offset: 1 }}>
                             <div className="card-input">
 
                                 <Form>
@@ -88,7 +89,7 @@ const CheckoutForm = ({ _id, price }) => {
 
                             </div>
                         </Col>
-                        <Col md={{ span: 5, offset:1 }}>
+                        <Col md={{ span: 5, offset: 1 }}>
                             <div className="paymentCard">
                                 <div className="bodyCard">
                                     <h4>Resumen de Pago</h4>
@@ -105,8 +106,8 @@ const CheckoutForm = ({ _id, price }) => {
                                         <li>Accesso de por vida</li>
                                         <li>Acceso en dispositivos móviles y TV</li>
                                     </ul>
-                                    <Button id="btn-form"  type="submit" >
-                                        <strong>Comprar</strong> 
+                                    <Button id="btn-form" type="submit" >
+                                        <strong>Comprar</strong>
                                     </Button>
                                 </div>
                             </div>
