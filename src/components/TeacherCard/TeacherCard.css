@@ -12,14 +12,14 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
 .teacher-card-container p {
     text-align: center;
-    /* line-height: 200px; */
-    /* margin-left: 400px; */
+
     font-family: 'Roboto Flex', sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 400;
 }
 
@@ -38,7 +38,7 @@
 .container-courses-page-teacher {
     background-color: rgb(255, 165, 39);
     width: 80%;
-    height: 10px;
+    height: 3px;
     position: relative;
     top: -10px;
     margin-left: 20px;

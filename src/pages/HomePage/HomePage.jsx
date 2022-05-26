@@ -19,7 +19,6 @@ const HomePage = () => {
                         </Col>
                         <Col md={{ span: 6 }} className="col-box-home-2">
                             <img src='./../img/re_educ_oc.gif'></img>
-
                         </Col>
                     </Row>
                 </Container>

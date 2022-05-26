@@ -5,6 +5,7 @@ import NotesForm from "../../components/NotesForm/NotesForm"
 import CardNotes from "../CardNotes/CardNotes";
 import { Link } from "react-router-dom";
 import { Badge, Container, ListGroup, Modal } from "react-bootstrap";
+import './NotesList.css'
 
 const NotesList = ({ course_id, update, setUpdate }) => {
 
@@ -48,7 +49,7 @@ const NotesList = ({ course_id, update, setUpdate }) => {
                 </ListGroup>
                 <Container>
 
-                    <Link onClick={openModal} to='#'>Crear Nueva Nota</Link>
+                    <Link className="new-note-link" onClick={openModal} to='#'>Crear Nueva Nota</Link>
                     <Modal show={showModal} onHide={closeModal}>
                         <Modal.Body>
                             <NotesForm

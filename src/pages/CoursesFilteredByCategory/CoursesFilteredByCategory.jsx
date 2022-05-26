@@ -41,6 +41,8 @@ const CoursesFilteredByCategory = () => {
                             <Col>
                                 <>
                                     <CourseCard {...category} />
+                                    <hr></hr>
+                                    <br></br>
                                 </>
                             </Col>
                         )

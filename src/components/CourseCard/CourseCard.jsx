@@ -6,13 +6,13 @@ import { Link } from "react-router-dom"
 
 const CourseCard = ({ _id, title, courseImg, headline, price, courses, avgRating }) => {
 
-    const realPrice = price/100
+    const realPrice = price / 100
     return (
 
         <div className="course-card-container">
             <Link to={`/cursos/${_id}`} style={{ textDecoration: 'none', color: "black" }}>
                 <Row>
-                    <Col md={{ span: 3, offset: 1 }}>
+                    <Col md={{ span: 4, offset: 1 }}>
                         <Card className="course-card">
                             <Card.Img variant="top" src={courseImg} />
                         </Card>
@@ -30,7 +30,7 @@ const CourseCard = ({ _id, title, courseImg, headline, price, courses, avgRating
                             <Card.Text>{headline}</Card.Text>
 
                             <Col md={{ span: 6 }}>
-                                <Card.Title>{avgRating} &nbsp; <FontAwesomeIcon className="star" icon={faStar} /> </Card.Title>
+                                <Card.Title><span className="avgRating">{avgRating} &nbsp;</span> <FontAwesomeIcon className="star" icon={faStar} /> </Card.Title>
                             </Col>
                         </Card.Body>
                     </Col>
