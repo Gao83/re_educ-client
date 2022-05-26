@@ -125,3 +125,8 @@ const CheckoutForm = ({ _id, price }) => {
 }
 
 export default CheckoutForm
+
+
+
+
+
