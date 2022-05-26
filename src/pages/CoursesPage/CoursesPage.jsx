@@ -10,13 +10,9 @@ const CoursePage = () => {
 
     const [coursesByRating, setCoursesByRating] = useState([])
 
-
-
     useEffect(() => {
         loadCoursesByRating()
     }, [])
-
-
 
 
     const loadCoursesByRating = () => {
@@ -32,16 +28,16 @@ const CoursePage = () => {
         <>
             <div className="container-courses-page">
 
-                <h3>Los mejor valorados</h3>
+                <h3>LOS MEJOR VALORADOS</h3>
                 <div className="container-courses-page-h3"></div>
                 <CourseByRating coursesByRating={coursesByRating} />
 
-                <h3>Listado de cursos</h3>
+                <h3>LISTADO DE CURSOS</h3>
                 <div className="container-courses-page-h3"></div>
 
                 <CourseList />
 
-                <h3>Listado de profesores/as</h3>
+                <h3>NUESTROS FORMADORES</h3>
                 <div className="container-courses-page-h3"></div>
                 <TeacherList />
 

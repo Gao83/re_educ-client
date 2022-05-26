@@ -43,7 +43,7 @@ const CourseMedia = () => {
                     <Row>
                         <h1>{title}</h1>
                         <Col className="video-box" md={{ span: 8 }}>
-                            <video src={courseVideo} width="750" height="450" controls >
+                            <video src={courseVideo} width="900" height="450" controls >
                                 Your browser does not support the video tag.
                             </video>
 
@@ -62,9 +62,9 @@ const CourseMedia = () => {
                                 </Container>
                             </Navbar>
                         </Col>
-                        <Col md={{ span: 4 }} className="list-videos">
+                        {/* <Col md={{ span: 4 }} className="list-videos">
                             <Button id="btn-see-more-video" onClick={() => setShowMore(!showMore)}>{showMore ? "Contenido" : <h5>Vídeo 1</h5>}</Button>
-                        </Col>
+                        </Col> */}
 
                         <NotesList
                             course_id={course_id}

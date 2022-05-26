@@ -7,6 +7,7 @@
 
 .container-student h1 {
     font-size: 2em;
+text-align: center;
 }
 
 .container-student p {
@@ -57,16 +58,26 @@
 .img-box {
     width: 200px;
     object-fit: cover;
+    margin:auto;
 }
 
 .img-box img {
     height: 200px;
     border-radius: 50%;
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.7);
 }
 
 #btn-edit-profile {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left: 80px;
     width: 200px;
+
+    /* margin:auto;
+    display: block; */
+}
+
+#btn-edit-profile a{
+    text-decoration: none;;
 }
 
 .profile-courses-col {
@@ -74,3 +85,4 @@
     margin-top: 100px;
 
 }
+
