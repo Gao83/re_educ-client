@@ -24,7 +24,7 @@ const HomePage = () => {
             </div>
             <div className="div-home"></div>
 
-            {/* <Link to='/cursos'> <CarouselCoursesHome /></Link> */}
+            <Link to='/cursos' > <CarouselCoursesHome /></Link>
 
             <div className="div-home"></div>
             <div className="home-second-box" >
