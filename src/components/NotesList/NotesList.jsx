@@ -2,12 +2,11 @@ import Loader from "../Loader/Loader"
 import { useEffect, useState } from "react";
 import notesService from "../../services/notes.service";
 import NotesForm from "../../components/NotesForm/NotesForm"
-import CardNotes from "../CardNotes/CardNotes";
 import { Link } from "react-router-dom";
-import { Badge, Container, ListGroup, Modal } from "react-bootstrap";
+import { Container, ListGroup, Modal } from "react-bootstrap";
 import './NotesList.css'
 
-const NotesList = ({ course_id, update, setUpdate }) => {
+const NotesList = ({ course_id, }) => {
 
     const [showModal, setShowModal] = useState(false)
     const [notesList, setNotesList] = useState()
@@ -15,7 +14,7 @@ const NotesList = ({ course_id, update, setUpdate }) => {
     const closeModal = () => setShowModal(false)
 
 
-    useEffect(() => loadNotesPerUser(), [update])
+    useEffect(() => loadNotesPerUser(), [])
 
     const loadNotesPerUser = () => {
         notesService
@@ -24,6 +23,10 @@ const NotesList = ({ course_id, update, setUpdate }) => {
                 setNotesList(data)
             })
             .catch(err => console.log(err))
+    }
+    const fireFinalActions = () => {
+        loadNotesPerUser()
+        closeModal()
     }
     return (
         notesList ?
@@ -45,7 +48,6 @@ const NotesList = ({ course_id, update, setUpdate }) => {
                             )
                         })
                     }
-
                 </ListGroup>
                 <Container>
 
@@ -54,19 +56,12 @@ const NotesList = ({ course_id, update, setUpdate }) => {
                         <Modal.Body>
                             <NotesForm
                                 course_id={course_id}
-                                setUpdate={setUpdate}
-                                closeModal={closeModal}
+                                fireFinalActions={fireFinalActions}
                             />
                         </Modal.Body>
                     </Modal>
                 </Container>
             </> : <Loader />
-
-
-
-
-
-
     )
 
 }

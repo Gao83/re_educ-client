@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import './TeacherProfile.css'
 import { Modal, Container, Row, Col } from 'react-bootstrap'
 import usersService from '../../services/users.service'
+import ratingService from "../../services/rating.service"
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import RatingsTeachers from '../../components/RatingsTeacher/RatingsTeacher'
@@ -13,28 +14,47 @@ import CreateRatingTeacher from '../../components/CreateRatingTeacher/CreateRati
 const UserProfile = () => {
 
     const [userDetails, setUserDetails] = useState({})
-    const [update, setUpdate] = useState(false)
+    const [teacherRatings, setTeacherRatings] = useState()
+    const [showModal, setShowModal] = useState(false)
+
+    const openModal = () => setShowModal(true)
+    const closeModal = () => setShowModal(false)
 
 
     const { id } = useParams()
 
-    useEffect(() => {
+    useEffect(() => loadOneUser(), [])
+    useEffect(() => loadRatingTeachers(), [])
 
+
+
+    const loadOneUser = () => {
         usersService
             .getOneUser(id)
             .then(({ data }) => {
                 setUserDetails(data)
             })
             .catch(err => console.log(err))
-    }, [])
+    }
 
+    const loadRatingTeachers = () => {
+        ratingService
+            .getTeacherComments(id)
+            .then(({ data }) => {
+                setTeacherRatings(data)
+            })
+            .catch(err => console.log(err))
+    }
+
+
+
+    const fireFinalActions = () => {
+        closeModal()
+        loadRatingTeachers()
+
+    }
 
     const { username, interests, education, aboutMe, profileImg, avgRating } = userDetails
-
-    const [showModal, setShowModal] = useState(false)
-    const openModal = () => setShowModal(true)
-    const closeModal = () => setShowModal(false)
-
 
     return (
         <>
@@ -57,8 +77,6 @@ const UserProfile = () => {
                                     <p>{aboutMe}</p>
                                 </Col>
                                 <Col md={{ span: 6, offset: 1 }} className="img-box img ">
-                                    {/* <h1>Imagen de perfil</h1>
-                                    <hr></hr> */}
                                     <img src={profileImg}></img>
                                     <br></br>
                                     <br></br>
@@ -68,9 +86,8 @@ const UserProfile = () => {
                                         <Modal.Body>
                                             <CreateRatingTeacher
                                                 id={id}
-                                                closeModal={closeModal}
-                                                setUpdate={setUpdate}
-                                                update={update} />
+                                                fireFinalActions={fireFinalActions}
+                                            />
                                         </Modal.Body>
                                     </Modal>
                                 </Col>
@@ -86,9 +103,8 @@ const UserProfile = () => {
                 <h1 >Mis Cursos</h1>
                 <hr></hr>
                 <CoursesByTeacher id={id} />
-                <RatingsTeachers id={id}
-                    setUpdate={setUpdate}
-                    update={update}
+
+                <RatingsTeachers teacherRatings={teacherRatings}
                 />
             </Col>
         </>

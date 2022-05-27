@@ -35,7 +35,7 @@ const UserSignupForm = ({ closeSignupModal}) => {
             .signup(signupForm)
             .then(({ data }) => {
                 setSignupForm(data)
-                closeSignupModal()
+                closeSignupModal(false)
                 navigate('/')
             })
             .catch(err => console.log(err))

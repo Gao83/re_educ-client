@@ -2,6 +2,7 @@ import CourseCardSmall from "../CourseCardSmall/CourseCardSmall"
 import Loader from "../Loader/Loader"
 import Carousel from "react-elastic-carousel";
 import { Link } from "react-router-dom";
+import { Col } from "react-bootstrap";
 
 
 const CourseByRating = ({ coursesByRating }) => {
@@ -24,9 +25,13 @@ const CourseByRating = ({ coursesByRating }) => {
                         coursesByRating.map(eachCourse => {
 
                             return (
-                                <Link to={`/cursos/${eachCourse._id}`} style={{ textDecoration: 'none', color: "black" }}>
-                                    <CourseCardSmall key={eachCourse._id} {...eachCourse} />
-                                </Link>
+                                <Col key={eachCourse._id}>
+
+                                    <Link to={`/cursos/${eachCourse._id}`} style={{ textDecoration: 'none', color: "black" }}>
+                                        <CourseCardSmall  {...eachCourse} />
+                                    </Link>
+
+                                </Col>
                             )
 
                         })

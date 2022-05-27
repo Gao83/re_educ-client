@@ -39,7 +39,7 @@ const CourseList = () => {
         const sliced = courses.slice(pageVisited, pageVisited + coursePerPage)
         setSlicedCourses(sliced)
     }
-    console.log(slicedCourses)
+    
 
     return (
       

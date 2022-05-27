@@ -36,11 +36,11 @@ const CoursesFilteredByCategory = () => {
             <Container className="container-category-courses">
                 {
                     categoryCourses.map(category => {
-                        console.log(category.av)
+
                         return (
-                            <Col>
+                            <Col key={category._id}>
                                 <>
-                                    <CourseCard {...category} />
+                                    <CourseCard  {...category} />
                                     <hr></hr>
                                     <br></br>
                                 </>

@@ -3,7 +3,7 @@ import { Button, Container, Form } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import notesService from "../../services/notes.service"
 
-const NotesForm = ({ course_id, closeModal, setUpdate }) => {
+const NotesForm = ({ course_id, fireFinalActions }) => {
 
     const [note, setNote] = useState({
         content: '',
@@ -27,14 +27,15 @@ const NotesForm = ({ course_id, closeModal, setUpdate }) => {
             .createNotes(course_id, note)
             .then(({ data }) => {
                 setNote(data)
+                fireFinalActions()
             })
             .catch(err => console.log(err))
     }
 
-    const buttonActions = () => {
-        closeModal()
-        setUpdate(true)
-    }
+    // const buttonActions = () => {
+    //     closeModal()
+    //     setUpdate(true)
+    // }
 
     return (
         <>
@@ -49,7 +50,7 @@ const NotesForm = ({ course_id, closeModal, setUpdate }) => {
                         <Form.Label>Tu nueva nota</Form.Label>
                         <Form.Control as="textarea" value={content} name='content' onChange={handleInputChange} rows={3} />
                     </Form.Group>
-                    <Button variant="dark" type="submit" onClick={buttonActions} >Dejar Comentario </Button>
+                    <Button variant="dark" type="submit" onClick={fireFinalActions} >Dejar Comentario </Button>
                 </Form>
             </Container>
         </>

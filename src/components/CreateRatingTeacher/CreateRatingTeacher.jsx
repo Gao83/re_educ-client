@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import ratingService from "../../services/rating.service"
 import { FaStar } from "react-icons/fa"
 import { Button, Container, Form } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
 
-const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
+const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
 
 
     const [ratingTeacherData, setRatingTeacherData] = useState({
@@ -12,13 +11,9 @@ const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
         rating: 0
     })
 
-
     const { content, rating } = ratingTeacherData
 
     const [hover, setHover] = useState(null)
-
-    const navigate = useNavigate()
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
@@ -35,16 +30,13 @@ const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
             .createTeacherComment(id, ratingTeacherData)
             .then(({ data }) => {
                 setRatingTeacherData(data)
-                // navigate(`/perfil/${id}`)
+                fireFinalActions()
             })
             .catch(err => console.log(err))
 
     }
 
-    const buttonActions = () => {
-        closeModal()
-        setUpdate(!update)
-    }
+
     const arrRating = [1, 2, 3, 4, 5]
     return (
         <>
@@ -73,10 +65,10 @@ const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
                         </Form.Group>
                     </div>
                     <Form.Group className="mb-3" controlId="content">
-                        <Form.Label>Deja tu comentario</Form.Label>
+                        <Form.Label>Deja tu comentario </Form.Label>
                         <Form.Control as="textarea" value={content} name='content' onChange={handleInputChange} rows={3} />
                     </Form.Group>
-                    <Button variant="dark" type="submit" onClick={buttonActions} >Dejar Comentario </Button>
+                    <Button variant="dark" type="submit" onClick={fireFinalActions} >Dejar Comentario </Button>
                 </Form>
             </Container>
         </>
