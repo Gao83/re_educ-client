@@ -93,7 +93,9 @@ const CourseDetailsPage = () => {
                                         <h4>Contenido</h4>
                                         {showMore ? content : `${content?.substr(0, 300)}`}
                                         <br></br>
-                                        <Button className="btn-dark btn-read-more" onClick={() => setShowMore(!showMore)}>{showMore ? "Ver menos" : "Ver más"}</Button>
+                                        <Button className="btn-dark btn-read-more"
+                                            onClick={() => setShowMore(!showMore)}>
+                                            {showMore ? "Ver menos" : "Ver más"}</Button>
                                     </div>
                                 </Col>
                             </Row>

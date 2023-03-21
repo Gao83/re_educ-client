@@ -43,7 +43,6 @@ const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
             <Container>
                 <Form onSubmit={handleSubmit}>
                     <div className="form-create-rating">
-
                         <Form.Group className="mb-3" controlId="rating">
                             {arrRating.map((start, idx) => {
                                 const ratingValue = idx + 1
