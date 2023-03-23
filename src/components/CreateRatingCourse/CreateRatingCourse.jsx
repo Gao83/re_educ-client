@@ -43,6 +43,9 @@ const CreateRating = () => {
             .catch(err => console.log(err))
     }
 
+
+
+
     const arrRating = [1, 2, 3, 4, 5]
     return (
         <>

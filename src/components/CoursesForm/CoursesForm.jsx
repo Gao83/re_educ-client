@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import courseServices from "../../services/courses.service"
 import uploadService from "../../services/upload.service"
@@ -79,24 +79,14 @@ const CoursesForm = () => {
             .catch(err => console.log(err))
     }
 
-
-    let selectOneInput = useRef()
-
-    useEffect(() => {
-        selectOneInput.current.focus()
-    }, [])
-
-    console.log(selectOneInput)
-
-
     return (
         <Container>
             <div className="course-form">
                 <Form onSubmit={handleSubmit}>
                     <Row className="mb-3">
-                        <Form.Group as={Col} className="mb-3" controlId="title" >
+                        <Form.Group as={Col} className="mb-3" controlId="title">
                             <Form.Label>Título del Curso</Form.Label>
-                            <Form.Control type="text" value={title} onChange={handleInputChange} name='title' ref={selectOneInput} />
+                            <Form.Control type="text" value={title} onChange={handleInputChange} name='title' />
                         </Form.Group >
                         <Form.Group as={Col} className="mb-3" controlId="headline">
                             <Form.Label>Encabezado</Form.Label>

@@ -2,11 +2,12 @@ import Loader from "../Loader/Loader"
 import { useEffect, useState } from "react";
 import notesService from "../../services/notes.service";
 import NotesForm from "../../components/NotesForm/NotesForm"
+import CardNotes from "../CardNotes/CardNotes";
 import { Link } from "react-router-dom";
-import { Container, ListGroup, Modal } from "react-bootstrap";
+import { Badge, Container, ListGroup, Modal } from "react-bootstrap";
 import './NotesList.css'
 
-const NotesList = ({ course_id, }) => {
+const NotesList = ({ course_id, update, setUpdate }) => {
 
     const [showModal, setShowModal] = useState(false)
     const [notesList, setNotesList] = useState()
@@ -14,7 +15,7 @@ const NotesList = ({ course_id, }) => {
     const closeModal = () => setShowModal(false)
 
 
-    useEffect(() => loadNotesPerUser(), [])
+    useEffect(() => loadNotesPerUser(), [update])
 
     const loadNotesPerUser = () => {
         notesService
@@ -23,10 +24,6 @@ const NotesList = ({ course_id, }) => {
                 setNotesList(data)
             })
             .catch(err => console.log(err))
-    }
-    const fireFinalActions = () => {
-        loadNotesPerUser()
-        closeModal()
     }
     return (
         notesList ?
@@ -48,6 +45,7 @@ const NotesList = ({ course_id, }) => {
                             )
                         })
                     }
+
                 </ListGroup>
                 <Container>
 
@@ -56,12 +54,19 @@ const NotesList = ({ course_id, }) => {
                         <Modal.Body>
                             <NotesForm
                                 course_id={course_id}
-                                fireFinalActions={fireFinalActions}
+                                setUpdate={setUpdate}
+                                closeModal={closeModal}
                             />
                         </Modal.Body>
                     </Modal>
                 </Container>
             </> : <Loader />
+
+
+
+
+
+
     )
 
 }

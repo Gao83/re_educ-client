@@ -5,7 +5,6 @@ import coursesService from "../../services/courses.service";
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import './CoursesPaid.css'
-import { Col } from "react-bootstrap";
 
 
 const CoursesPaid = () => {
@@ -45,13 +44,9 @@ const CoursesPaid = () => {
                     {
                         coursesPaid.map(eachCourse => {
                             return (
-                                <Col key={eachCourse._id}>
-
-                                    <Link to={`/cursos/${eachCourse._id}/media`} className="link-courses-paid">
-                                        <CourseCardSmall  {...eachCourse} />
-                                    </Link>
-
-                                </Col>
+                                <Link to={`/cursos/${eachCourse._id}/media`} className="link-courses-paid">
+                                    <CourseCardSmall key={eachCourse._id} {...eachCourse} />
+                                </Link>
                             )
 
                         })

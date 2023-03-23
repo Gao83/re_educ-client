@@ -2,6 +2,7 @@ import { Container, Col, Row, Button } from 'react-bootstrap'
 import CarouselCoursesHome from '../../components/CarouselCoursesHome/CarouselCoursesHome'
 import { Link } from 'react-router-dom'
 import './HomePage.css'
+import CourseCard from '../../components/CourseCard/CourseCard'
 
 
 
@@ -24,7 +25,7 @@ const HomePage = () => {
             </div>
             <div className="div-home"></div>
 
-            <Link to='/cursos' > <CarouselCoursesHome /></Link>
+            <Link to='/cursos'> <CarouselCoursesHome /></Link>
 
             <div className="div-home"></div>
             <div className="home-second-box" >

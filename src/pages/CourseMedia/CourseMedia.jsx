@@ -11,6 +11,7 @@ import './CourseMedia.css'
 const CourseMedia = () => {
     const [showModal, setShowModal] = useState(false)
     const [showMore, setShowMore] = useState(false);
+    const [update, setUpdate] = useState(false)
     const openModal = () => setShowModal(true)
     const closeModal = () => setShowModal(false)
 
@@ -67,6 +68,8 @@ const CourseMedia = () => {
 
                         <NotesList
                             course_id={course_id}
+                            update={update}
+                            setUpdate={setUpdate}
                         />
 
                     </Row>

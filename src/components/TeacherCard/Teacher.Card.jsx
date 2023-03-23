@@ -14,7 +14,7 @@ const TeacherCard = ({ username, profileImg, _id, interests }) => {
                 <div className="teacher-card-container">
                     <div className="teacher-card-img" >
                         <img src={profileImg}></img>
-                        <div className="teacher-card-p">
+                        <div clasName="teacher-card-p">
                             <span id="username-teacher-card"><p>{username}</p></span>
                             <p>{interests}</p>
                             <div className="container-courses-page-teacher"></div>

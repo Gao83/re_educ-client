@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ratingService from "../../services/rating.service"
 import { FaStar } from "react-icons/fa"
 import { Button, Container, Form } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
 
-const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
+const CreateRatingTeacher = ({ id, closeModal, setUpdate, update }) => {
 
 
     const [ratingTeacherData, setRatingTeacherData] = useState({
@@ -11,9 +12,13 @@ const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
         rating: 0
     })
 
+
     const { content, rating } = ratingTeacherData
 
     const [hover, setHover] = useState(null)
+
+    const navigate = useNavigate()
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.currentTarget
@@ -30,19 +35,23 @@ const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
             .createTeacherComment(id, ratingTeacherData)
             .then(({ data }) => {
                 setRatingTeacherData(data)
-                fireFinalActions()
+                // navigate(`/perfil/${id}`)
             })
             .catch(err => console.log(err))
 
     }
 
-
+    const buttonActions = () => {
+        closeModal()
+        setUpdate(!update)
+    }
     const arrRating = [1, 2, 3, 4, 5]
     return (
         <>
             <Container>
                 <Form onSubmit={handleSubmit}>
                     <div className="form-create-rating">
+
                         <Form.Group className="mb-3" controlId="rating">
                             {arrRating.map((start, idx) => {
                                 const ratingValue = idx + 1
@@ -64,10 +73,10 @@ const CreateRatingTeacher = ({ id, closeModal, fireFinalActions }) => {
                         </Form.Group>
                     </div>
                     <Form.Group className="mb-3" controlId="content">
-                        <Form.Label>Deja tu comentario </Form.Label>
+                        <Form.Label>Deja tu comentario</Form.Label>
                         <Form.Control as="textarea" value={content} name='content' onChange={handleInputChange} rows={3} />
                     </Form.Group>
-                    <Button variant="dark" type="submit" onClick={fireFinalActions} >Dejar Comentario </Button>
+                    <Button variant="dark" type="submit" onClick={buttonActions} >Dejar Comentario </Button>
                 </Form>
             </Container>
         </>
