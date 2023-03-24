@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import coursesService from '../../services/courses.service'
 import './SearchBar.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SearchBar = () => {
 
-    const [searchByInput, setSearchbyInput] = useState([])
-    const [searchStr, setSearchStr] = useState('')
+    const [searchByInput, setSearchbyInput] = useState([]);
+    const [searchStr, setSearchStr] = useState('');
+    const navigate = useNavigate();
 
     const handleByInput = e => {
 
@@ -28,10 +29,26 @@ const SearchBar = () => {
         setSearchStr('')
     }
 
+    const handleKeyPress = e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            navigate(`/search?q=${searchStr}`)
+            setSearchbyInput([])
+            setSearchStr('')
+        }
+
+    }
+
     return (
         <div>
             <div className='searchbar'>
-                <input type="text" placeholder='Busca un curso' onChange={handleByInput} value={searchStr} />
+                <input
+                    type="text"
+                    placeholder='Busca un curso'
+                    onChange={handleByInput}
+                    onKeyDown={handleKeyPress}
+
+                    value={searchStr} />
             </div>
             <div>
                 {

@@ -12,6 +12,7 @@ import CoursesFilteredByCategory from "../pages/CoursesFilteredByCategory/Course
 import TeacherProfile from "../pages/TeacherProfile/TeacherProfile"
 import CourseMedia from "../pages/CourseMedia/CourseMedia"
 import StripeContainer from "../components/StripeContainer/StripeContainer"
+import CourseSearchFilter from "../pages/CourseSearchFilter/CourseSearchFilter"
 
 
 const AppRoutes = () => {
@@ -32,6 +33,8 @@ const AppRoutes = () => {
             <Route path='/:course_id/stripe' element={<StripeContainer />} />
             <Route path='/perfil/:id' element={<TeacherProfile />} />
             <Route path='/:notes_id/delete' element={<TeacherProfile />} />
+            <Route path='/search' element={<CourseSearchFilter />} />
+
         </Routes>
     )
 }
